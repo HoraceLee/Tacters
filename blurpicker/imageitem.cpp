@@ -57,7 +57,7 @@ ImageItem::ImageItem(int id, const QPixmap &pixmap,BlurPicker *blurPicker, QGrap
     connect(&timeLine, SIGNAL(frameChanged(int)), this, SLOT(setFrame(int)));
     connect(&timeLine, SIGNAL(finished()), this, SLOT(updateItemPosition()));
 
-//    connect(this,SIGNAL(mousePressEvent (QGraphicsSceneMouseEvent *event)), BlurPicker::BlurPicker() , SLOT(BlurPicker::dispose()));
+//    connect(this,SIGNAL(mousePressEvent (QGraphicsSceneMouseEvent *event)), blur , SLOT(BlurPicker::dispose()));
     adjust();
 
 
@@ -110,7 +110,8 @@ void ImageItem::setFrame(int frame)
 void ImageItem::adjust()
 {
     QMatrix matrix;
-    matrix.scale(120 / boundingRect().width(), 120 / boundingRect().height());
+//    matrix.scale(120 / boundingRect().width(), 120 / boundingRect().height());
+    matrix.scale(1,1);
     setMatrix(matrix);
 }
 

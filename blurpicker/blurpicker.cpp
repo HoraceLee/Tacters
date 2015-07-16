@@ -40,12 +40,15 @@ void BlurPicker::setIndex(qreal index)
     qreal baseline = 0;
     for (int i = 0; i < m_icons.count(); ++i) {
         ImageItem *icon = m_icons[i];
-        qreal a = ((i + m_index) * 5 * M_PI) / m_icons.count();
+        qreal a = ((i + m_index) * 2 * M_PI) / m_icons.count();
         qreal xs = 340 * qSin(a);
         qreal ys = 200 * qCos(a);
         QPointF pos(xs, ys);
-        pos = QTransform().rotate(-20).map(pos);
+//        pos = QTransform::scale(0.2,0.2).map(pos);
+//        pos = QTransform().rotate(-20).map(pos);
+        pos = QTransform().rotate(0).map(pos);
         pos -= QPointF(40, 40);
+//        pos -= QPoint(10,10);
         icon->setPos(pos);
         baseline = qMax(baseline, ys);
         static_cast<BlurEffect *>(icon->graphicsEffect())->setBaseLine(baseline);
@@ -56,7 +59,9 @@ void BlurPicker::setIndex(qreal index)
 
 void BlurPicker::setupScene()
 {
-    scene()->setSceneRect(-400, -240, 800, 480);
+    QSize size = BlurPicker::size();
+//    scene()->setSceneRect(-size.width()/2,-size.height()/2,size.width(),size.height());
+    scene()->setSceneRect(-500, -309, 1000, 618);
 
     QStringList names;
     names << ":/images/accessories-calculator.png";

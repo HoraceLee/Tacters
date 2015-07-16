@@ -48,7 +48,9 @@ int main(int argc, char **argv)
     BlurPicker blurPicker;
     blurPicker.setWindowTitle(QT_TRANSLATE_NOOP(QGraphicsView, "Application Picker"));
 
-    blurPicker.setFixedSize(800, 600);
+//    blurPicker.showFullScreen();
+//    blurPicker.showMaximized();
+    blurPicker.setFixedSize(1000, 618);
     blurPicker.show();
 
     return app.exec();
