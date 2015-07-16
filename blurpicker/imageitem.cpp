@@ -125,4 +125,17 @@ void ImageItem::updateItemPosition()
     setZValue(z);
 }
 
+//void ImageItem::big(){
+//    if()
+//    timeLine.setDirection(QTimeLine::Forward);
+
+//    if (z != 1.0) {
+//        z = 1.0;
+//        updateItemPosition();
+//    }
+
+//    if (timeLine.state() == QTimeLine::NotRunning)
+//        timeLine.start();
+//}
+
 

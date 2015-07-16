@@ -73,5 +73,6 @@ private:
     int recordId;
     double z;
     BlurPicker *blur;
+//    void big();
 };
 #endif

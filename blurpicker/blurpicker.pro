@@ -1,11 +1,9 @@
 QT += widgets core gui
 
 SOURCES += main.cpp blurpicker.cpp blureffect.cpp \
-    imageitem.cpp \
-    item.cpp
+    imageitem.cpp
 HEADERS += blurpicker.h blureffect.h \
-    imageitem.h \
-    item.h
+    imageitem.h
 RESOURCES += blurpicker.qrc
 
 # install
