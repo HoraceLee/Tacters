@@ -5,7 +5,6 @@
 
 #include "blureffect.h"
 #include "imageitem.h"
-#include "item.h"
 #include "QTimer"
 
 
@@ -106,23 +105,23 @@ void BlurPicker::setupScene()
 
 void BlurPicker::keyPressEvent(QKeyEvent *event)
 {
-    int delta = 0;
-    switch (event->key())
-    {
-    case Qt::Key_Left:
-        delta = -1;
-        break;
-    case  Qt::Key_Right:
-        delta = 1;
-        break;
-    default:
-        break;
-    }
-    if (m_animation.state() == QAbstractAnimation::Stopped && delta) {
-        m_animation.setEndValue(m_index + delta);
-        m_animation.start();
-        event->accept();
-    }
+//    int delta = 0;
+//    switch (event->key())
+//    {
+//    case Qt::Key_Left:
+//        delta = -1;
+//        break;
+//    case  Qt::Key_Right:
+//        delta = 1;
+//        break;
+//    default:
+//        break;
+//    }
+//    if (m_animation.state() == QAbstractAnimation::Stopped && delta) {
+//        m_animation.setEndValue(m_index + delta);
+//        m_animation.start();
+//        event->accept();
+//    }
 }
 
 void BlurPicker::resizeEvent(QResizeEvent * /* event */)
@@ -130,24 +129,23 @@ void BlurPicker::resizeEvent(QResizeEvent * /* event */)
 }
 void BlurPicker::mousePressEvent(QMouseEvent *event)
 {
-    if (event->button () == Qt::RightButton){
+//    if (event->button () == Qt::RightButton){
+//        int delta = 0;
+//        if(event->x() > (width() / 2))
+//        {
+//            delta = 1;
+//        }
+//        else
+//        {
+//            delta = -1;
+//        }
 
-    int delta = 0;
-    if(event->x() > (width() / 2))
-    {
-        delta = 1;
-    }
-    else
-    {
-        delta = -1;
-    }
-
-    if (m_animation.state() == QAbstractAnimation::Stopped && delta) {
-        m_animation.setEndValue(m_index + delta);
-        m_animation.start();
-        event->accept();
-    }
-    }
+//        if (m_animation.state() == QAbstractAnimation::Stopped && delta) {
+//            m_animation.setEndValue(m_index + delta);
+//            m_animation.start();
+//            event->accept();
+//        }
+//    }
     if(event->button() == Qt::LeftButton){
         if(this->itemAt(event->x(),event->y())==NULL){
             return;
