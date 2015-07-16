@@ -13,6 +13,8 @@
 #define M_PI 3.14159265358979323846
 #endif
 
+int foreground = 0;
+
 BlurPicker::BlurPicker(QWidget *parent): QGraphicsView(parent), m_index(0.0), m_animation(this, "index")
 {
     setBackgroundBrush(QPixmap(":/images/background.jpg"));
@@ -145,6 +147,24 @@ void BlurPicker::mousePressEvent(QMouseEvent *event)
         m_animation.start();
         event->accept();
     }
+    }
+    if(event->button() == Qt::LeftButton){
+        if(this->itemAt(event->x(),event->y())==NULL){
+            return;
+        }
+        QPointF pos = this->itemAt(event->x() , event->y())->pos();
+        for(int i=0;i<m_icons.count();i++){
+            if((m_icons[i]->pos().rx()==pos.rx() )&& (m_icons[i]->pos().ry()==pos.ry())){
+                if (m_animation.state() == QAbstractAnimation::Stopped) {
+                    m_animation.setEndValue(m_index + (( foreground - i ) + m_icons.count()) % m_icons.count());
+//                                m_animation.setEndValue(m_index +i);
+                    m_animation.start();
+                    event->accept();
+                    foreground = i;
+//                    m_icons[i]->big();
+                }
+            }
+        }
     }
 }
 
