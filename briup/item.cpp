@@ -52,6 +52,7 @@
 #include "portsimulation.h"
 #include "shakesimulator.h"
 #include "grapwidget.h"
+#include "rfidsimulation.h"
 
 class FileUtils;
 
@@ -199,7 +200,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 4:
-
+                rfid = new RFIDsimulation;
+                rfid->show();
                 break;
             }
             break;

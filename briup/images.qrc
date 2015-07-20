@@ -88,5 +88,9 @@
         <file>images/musicTimeoutBtn.png</file>
         <file>images/piano.png</file>
         <file>images/pianoIcon.png</file>
+        <file>images/card2.png</file>
+        <file>images/RFIDcard.png</file>
+        <file>images/RFIDReader.png</file>
+        <file>images/signal3.gif</file>
     </qresource>
 </RCC>

@@ -37,7 +37,8 @@ SOURCES += main.cpp\
     lightdemonstrate.cpp \
     motordemonstrate.cpp \
     portsimulation.cpp \
-    shakesimulator.cpp
+    shakesimulator.cpp \
+    rfidsimulation.cpp
 
 HEADERS  += mainwindow.h \
     mainwidget.h \
@@ -64,7 +65,8 @@ HEADERS  += mainwindow.h \
     lightdemonstrate.h \
     motordemonstrate.h \
     portsimulation.h \
-    shakesimulator.h
+    shakesimulator.h \
+    rfidsimulation.h
 
 FORMS    += mainwindow.ui \
     mainwidget.ui \
@@ -82,7 +84,8 @@ FORMS    += mainwindow.ui \
     lightdemonstrate.ui \
     motordemonstrate.ui \
     portsimulation.ui \
-    shakesimulator.ui
+    shakesimulator.ui \
+    rfidsimulation.ui
 
 RESOURCES += \
     images.qrc \

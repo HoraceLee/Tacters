@@ -82,10 +82,7 @@ HumidityWindow::HumidityWindow(QWidget *parent) :
 
             serialport->setPortName(info.portName());
         }
-
     serialport->open(QIODevice::ReadWrite);
-
-
     serialport->setBaudRate(9600);
     //设置数据位
     serialport->setDataBits((QSerialPort::DataBits)(8));

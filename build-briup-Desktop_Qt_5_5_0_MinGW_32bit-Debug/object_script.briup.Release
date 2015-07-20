@@ -25,6 +25,7 @@ INPUT(
 ./release\motordemonstrate.o
 ./release\portsimulation.o
 ./release\shakesimulator.o
+./release\rfidsimulation.o
 ./release\qrc_images.o
 ./release\moc_mainwindow.o
 ./release\moc_mainwidget.o
@@ -48,4 +49,5 @@ INPUT(
 ./release\moc_motordemonstrate.o
 ./release\moc_portsimulation.o
 ./release\moc_shakesimulator.o
+./release\moc_rfidsimulation.o
 );
