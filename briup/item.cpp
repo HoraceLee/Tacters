@@ -79,7 +79,7 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 1:
-                grapLed = new grapWidget;
+                grapLed = new grapWidget(0);
                 grapLed->show();
                 break;
             case 2:
@@ -101,7 +101,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 1:
-
+                grapLed = new grapWidget(1);
+                grapLed->show();
                 break;
             case 2:
 
@@ -122,7 +123,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 1:
-
+                grapLed = new grapWidget(2);
+                grapLed->show();
                 break;
             case 2:
 
@@ -143,7 +145,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 1:
-
+                grapLed = new grapWidget(3);
+                grapLed->show();
                 break;
             case 2:
 
@@ -164,7 +167,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 1:
-
+                grapLed = new grapWidget(4);
+                grapLed->show();
                 break;
             case 2:
 
@@ -185,7 +189,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 1:
-
+                grapLed = new grapWidget(5);
+                grapLed->show();
                 break;
             case 2:
 
@@ -205,7 +210,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 1:
-
+                grapLed = new grapWidget(6);
+                grapLed->show();
                 break;
             case 2:
 
@@ -226,7 +232,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 1:
-
+                grapLed = new grapWidget(7);
+                grapLed->show();
                 break;
             case 2:
 
@@ -247,7 +254,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 1:
-
+                grapLed = new grapWidget(8);
+                grapLed->show();
                 break;
             case 2:
 
@@ -268,7 +276,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 1:
-
+                grapLed = new grapWidget(9);
+                grapLed->show();
                 break;
             case 2:
 
@@ -289,7 +298,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 1:
-
+                grapLed = new grapWidget(10);
+                grapLed->show();
                 break;
             case 2:
 
@@ -310,7 +320,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 1:
-
+                grapLed = new grapWidget(11);
+                grapLed->show();
                 break;
             case 2:
 
@@ -331,7 +342,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 1:
-
+                grapLed = new grapWidget(12);
+                grapLed->show();
                 break;
             case 2:
 
@@ -352,7 +364,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 1:
-
+                grapLed = new grapWidget(13);
+                grapLed->show();
                 break;
             case 2:
 
@@ -373,26 +386,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 1:
-
-                break;
-            case 2:
-
-                break;
-            case 3:
-
-                break;
-            case 4:
-
-                break;
-            }
-            break;
-        case 15:
-            switch(recordId){
-            case 0:
-
-                break;
-            case 1:
-
+                grapLed = new grapWidget(14);
+                grapLed->show();
                 break;
             case 2:
 

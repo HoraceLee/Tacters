@@ -13,7 +13,7 @@ class grapWidget : public QGraphicsView
     Q_OBJECT
 
 public:
-    explicit grapWidget(QWidget *parent = 0);
+    grapWidget(int circuitId,QWidget *parent = 0);
     ~grapWidget();
 
 protected:

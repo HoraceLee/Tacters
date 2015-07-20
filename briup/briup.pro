@@ -87,4 +87,18 @@ FORMS    += mainwindow.ui \
 RESOURCES += \
     images.qrc \
 
-DISTFILES +=
+DISTFILES += \
+    circuit_images/0001.jpg \
+    circuit_images/0002.jpg \
+    circuit_images/0003.jpg \
+    circuit_images/0004.jpg \
+    circuit_images/0005.jpg \
+    circuit_images/0006.jpg \
+    circuit_images/0007.jpg \
+    circuit_images/0008.jpg \
+    circuit_images/0009.jpg \
+    circuit_images/0010.jpg \
+    circuit_images/0011.jpg \
+    circuit_images/0012.jpg \
+    circuit_images/0013.jpg \
+    circuit_images/0014.jpg
