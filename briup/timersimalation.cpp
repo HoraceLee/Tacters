@@ -11,6 +11,7 @@
 #include <QByteArray>
 #include <QSerialPortInfo>
 #include <QBitmap>
+#include "frame.h"
 
 timersimalation::timersimalation(QWidget *parent) :
     QWidget(parent),
@@ -54,6 +55,8 @@ timersimalation::timersimalation(QWidget *parent) :
         //校验
         serialport->setParity((QSerialPort::Parity)(0));//23333333
         this->isPortOpen=true;
+        char send[2]={0x02,0xff};
+        serialport->write(send);
         readTimer.start(200);//每隔2ms
         connect(&readTimer,SIGNAL(timeout()),this,SLOT(readSlot()));
         //连接设备
@@ -68,6 +71,9 @@ void timersimalation::readSlot()
 {
     QByteArray data;
     data=this->serialport->readAll();//接受数据
+    if(!isFrame(data,0x02,3)){
+        return;
+    }
     if(data.isEmpty()){
        return;
     }

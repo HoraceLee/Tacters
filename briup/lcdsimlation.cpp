@@ -10,6 +10,7 @@
 #include <qserialport.h>
 #include <qserialportinfo.h>
 #include <QBitmap>
+#include "frame.h"
 
 int flag = 0;
 lcdsimlation::lcdsimlation(QWidget *parent) :
@@ -62,6 +63,8 @@ lcdsimlation::lcdsimlation(QWidget *parent) :
         serialport->setParity((QSerialPort::Parity)(0));//23333333
         this->isPortOpen=true;
         readTimer.start(200);//每隔2ms
+        char send[2]={0x13,0xff};
+        serialport->write(send);
         connect(&readTimer,SIGNAL(timeout()),this,SLOT(readSlot()));
         //连接设备
     }
@@ -76,6 +79,9 @@ lcdsimlation::~lcdsimlation()
 void lcdsimlation::readSlot(){
     QByteArray data;
     data=this->serialport->readAll();//接受数据
+    if(!isFrame(data,0x13)){
+        return;
+    }
     if(!data.isEmpty()){
         ui->title->clear();
         ui->contents->setText("数据发送成功！");

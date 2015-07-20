@@ -42,7 +42,8 @@ SOURCES += main.cpp\
     buzzersimulator.cpp \
     musicwidget.cpp \
     mylabel.cpp \
-    pianowidget.cpp
+    pianowidget.cpp \
+    frame.cpp
 
 HEADERS  += mainwindow.h \
     mainwidget.h \
@@ -74,7 +75,8 @@ HEADERS  += mainwindow.h \
     buzzersimulator.h \
     musicwidget.h \
     mylabel.h \
-    pianowidget.h
+    pianowidget.h \
+    frame.h
 
 FORMS    += mainwindow.ui \
     mainwidget.ui \

@@ -1,7 +1,7 @@
 #include "pianowidget.h"
 #include "ui_pianowidget.h"
 #include <QSerialPortInfo>
-
+#include "frame.h"
 pianowidget::pianowidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::pianowidget)
@@ -31,6 +31,8 @@ pianowidget::pianowidget(QWidget *parent) :
         //校验
         serialport->setParity((QSerialPort::Parity)(0));//23333333
         this->isPortOpen=true;
+        char send[2]={0x10,0xff};
+        serialport->write(send);
         //连接设备
     }
 }

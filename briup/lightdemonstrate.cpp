@@ -6,6 +6,7 @@
 #include <QSerialPortInfo>
 #include <QBitmap>
 #include <QPainter>
+#include "frame.h"
 
 lightDemonstrate::lightDemonstrate(QWidget *parent) :
     QWidget(parent),
@@ -64,6 +65,8 @@ lightDemonstrate::lightDemonstrate(QWidget *parent) :
         //校验
         serialport->setParity((QSerialPort::Parity)(0));//23333333
         this->isPortOpen=true;
+        char send[2]={0x08,0xff};
+        serialport->write(send);
         readTimer.start(200);//每隔200ms
     }
     connect(&readTimer,SIGNAL(timeout()),this,SLOT(readSlot()));
@@ -76,6 +79,9 @@ lightDemonstrate::~lightDemonstrate()
 void lightDemonstrate::readSlot(){
     QByteArray data;
     data=this->serialport->readAll();//接受数据
+    if(!isFrame(data,0x08,3)){
+        return;
+    }
     if(!data.isEmpty())
     {
         return;

@@ -8,6 +8,7 @@
 #include <QPixmap>
 
 
+
 namespace Ui {
 class infarredsimulation;
 }

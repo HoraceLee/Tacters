@@ -1,6 +1,7 @@
 #include "musicwidget.h"
 #include "ui_musicwidget.h"
 #include <QSerialPortInfo>
+#include "frame.h"
 
 musicwidget::musicwidget(QWidget *parent) :
     QWidget(parent),
@@ -31,6 +32,8 @@ musicwidget::musicwidget(QWidget *parent) :
         //校验
         serialport->setParity((QSerialPort::Parity)(0));//23333333
         this->isPortOpen=true;
+        char send[2]={0x10,0xff};
+        serialport->write(send);
         //连接设备
     }
 }

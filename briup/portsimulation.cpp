@@ -8,6 +8,7 @@
 #include <QSerialPortInfo>
 #include <QBitmap>
 #include <QPainter>
+#include "frame.h"
 
 portsimulation::portsimulation(QWidget *parent) :
     QWidget(parent),
@@ -54,6 +55,8 @@ portsimulation::portsimulation(QWidget *parent) :
         //校验
         serialport->setParity((QSerialPort::Parity)(0));//23333333
         this->isPortOpen=true;
+        char send[2]={0x04,0xff};
+        serialport->write(send);
         readTimer.start(200);//每隔200ms
 
     }
@@ -68,6 +71,9 @@ portsimulation::~portsimulation()
 void portsimulation::readSlot(){
     QByteArray data;
     data=this->serialport->readAll();//接受数据
+    if(!isFrame(data,0x04)){
+        return;
+    }
     if(data.isEmpty()){
        return;
     }

@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <QBitmap>
 #include <QtCore/qmath.h>
+#include "frame.h"
 
 int state[8] = {0,0,0,0,0,0,0,0};
 bool twinkleFlag = false;
@@ -58,6 +59,8 @@ ledsimulation::ledsimulation(QWidget *parent) :
         //校验
         serialport->setParity((QSerialPort::Parity)(0));//23333333
         this->isPortOpen=true;
+        char send[2]={0x01,0xff};
+        serialport->write(send);
         readTimer.start(200);//每隔2ms
         waitTimer.start(3000);//每3s
     }
@@ -74,6 +77,9 @@ ledsimulation::~ledsimulation()
 void ledsimulation::readSlot(){
     QByteArray data;
     data=this->serialport->readAll();
+    if(!isFrame(data,0x01,3)){
+        return;
+    }
     if(!data.isEmpty()){
         for(int i = 0;i<data.length();i++){
             Test[i]=(unsigned char)data.at(i);
@@ -333,4 +339,5 @@ void ledsimulation::on_pushButton_4_clicked()
 void ledsimulation::on_closeBtn_clicked()
 {
     this->close();
+    serialport->close();
 }

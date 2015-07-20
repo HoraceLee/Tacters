@@ -30,6 +30,7 @@ INPUT(
 ./debug\musicwidget.o
 ./debug\mylabel.o
 ./debug\pianowidget.o
+./debug\frame.o
 ./debug\qrc_images.o
 ./debug\moc_mainwindow.o
 ./debug\moc_mainwidget.o

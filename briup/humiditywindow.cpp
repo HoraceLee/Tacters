@@ -8,6 +8,7 @@
 #include <QSerialPortInfo>
 #include <QTimer>
 #include <QBitmap>
+#include <frame.h>
 class FileUtils;
 
 int HumidityWindow::index = 0;
@@ -91,6 +92,8 @@ HumidityWindow::HumidityWindow(QWidget *parent) :
     //校验
     serialport->setParity((QSerialPort::Parity)(0));//23333333
     this->isPortOpen=true;
+    char send[2]={0x10,0xff};
+    serialport->write(send);
     readTimer.start(200);//每隔200ms
 
 }
@@ -112,6 +115,9 @@ void HumidityWindow::readSolt()
 {
     QByteArray data;
     data=this->serialport->readAll();//接受数据
+    if(!isFrame(data,0x10)){
+        return;
+    }
     if(data.isEmpty())
     {
        return;

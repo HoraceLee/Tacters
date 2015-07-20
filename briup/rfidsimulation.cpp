@@ -7,6 +7,7 @@
 #include <QBitmap>
 #include <QPixmap>
 #include <QPainter>
+#include "frame.h"
 
 RFIDsimulation::RFIDsimulation(QWidget *parent) :
     QWidget(parent),
@@ -52,7 +53,9 @@ RFIDsimulation::RFIDsimulation(QWidget *parent) :
         //校验
         serialport->setParity((QSerialPort::Parity)(0));//23333333
         this->isPortOpen=true;
-        readTimer.start(200);//每隔2ms
+        char send[2]={0x14,0xff};
+        serialport->write(send);
+        readTimer.start(200);//每隔200ms
         connect(&readTimer,SIGNAL(timeout()),this,SLOT(readSlot()));
         //连接设备
     }
@@ -65,6 +68,9 @@ RFIDsimulation::~RFIDsimulation()
 void RFIDsimulation::readSlot(){
     QByteArray data;
     data=this->serialport->readAll();//接受数据
+    if(!isFrame(data,0x14)){
+        return;
+    }
     if(data.isEmpty()){
        ui->RFIDcard->clear();
        return;

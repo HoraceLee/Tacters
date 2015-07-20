@@ -6,6 +6,7 @@
 #include <QPainter>
 #include <QTimer>
 #include <qserialportinfo.h>
+#include "frame.h"
 
 interinstruction::interinstruction(QWidget *parent) :
     QWidget(parent),
@@ -52,6 +53,8 @@ interinstruction::interinstruction(QWidget *parent) :
         //校验
         serialport->setParity((QSerialPort::Parity)(0));//23333333
         this->isPortOpen=true;
+        char send[2]={0x03,0xff};
+        serialport->write(send);
         readTimer.start(200);//每隔200ms
     }
     connect(&readTimer,SIGNAL(timeout()),this,SLOT(readSlot()));
@@ -65,6 +68,9 @@ void interinstruction::readSlot()
 {
     QByteArray data;
     data=this->serialport->readAll();//接受数据
+    if(!isFrame(data,0x03,3)){
+        return;
+    }
     if(data.isEmpty()) return ;
     if(data[0]!=3) return ;
     order=(unsigned char)data.at(1);
