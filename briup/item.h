@@ -59,10 +59,6 @@
 #include "motordemonstrate.h"
 #include "portsimulation.h"
 #include "shakesimulator.h"
-#include "buzwidget.h"
-#include "musicwidget.h"
-#include "pianowidget.h"
-
 #include "grapwidget.h"
 
 class Picker;
@@ -103,7 +99,6 @@ private:
     MotorDemonstrate *motor;
     portsimulation *port;
     ShakeSimulator *shake;
-//    BuzWidget *buz;
 
     grapWidget *grapLed;
 };

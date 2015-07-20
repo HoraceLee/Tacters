@@ -51,13 +51,9 @@
 #include "lightdemonstrate.h"
 #include "portsimulation.h"
 #include "shakesimulator.h"
-#include "buzwidget.h"
-#include "pianowidget.h"
-#include "musicwidget.h"
 #include "grapwidget.h"
 
 class FileUtils;
-class BuzWidget;
 
 Item::Item(int id, const QPixmap &pixmap,Picker *Picker, QGraphicsItem *parent)
     : QGraphicsPixmapItem(pixmap, parent),picker(Picker)

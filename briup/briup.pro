@@ -37,11 +37,7 @@ SOURCES += main.cpp\
     lightdemonstrate.cpp \
     motordemonstrate.cpp \
     portsimulation.cpp \
-    shakesimulator.cpp \
-    musicwidget.cpp \
-    mylabel.cpp \
-    pianowidget.cpp \
-    buzwidget.cpp
+    shakesimulator.cpp
 
 HEADERS  += mainwindow.h \
     mainwidget.h \
@@ -68,11 +64,7 @@ HEADERS  += mainwindow.h \
     lightdemonstrate.h \
     motordemonstrate.h \
     portsimulation.h \
-    shakesimulator.h \
-    musicwidget.h \
-    mylabel.h \
-    pianowidget.h \
-    buzwidget.h
+    shakesimulator.h
 
 FORMS    += mainwindow.ui \
     mainwidget.ui \
@@ -90,10 +82,7 @@ FORMS    += mainwindow.ui \
     lightdemonstrate.ui \
     motordemonstrate.ui \
     portsimulation.ui \
-    shakesimulator.ui \
-    buzwidget.ui \
-    musicwidget.ui \
-    pianowidget.ui
+    shakesimulator.ui
 
 RESOURCES += \
     images.qrc \

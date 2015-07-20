@@ -18,8 +18,26 @@ grapWidget::grapWidget(QWidget *parent)
     scale(qreal(0.8), qreal(0.8));//比例
     setMinimumSize(1000, 618);
    // setMaximumSize(1000,618);
+    QPixmap pixmap;
     setWindowTitle(tr("实验电路图"));
-    QPixmap pixmap(":/images/circuitLed.png");
+    int id = 0;
+    switch (id) {
+    case 0:
+        pixmap = QPixmap(":/images/circuitLed.png");
+        break;
+    case 1:
+        break;
+    case 2:
+        break;
+    case 3:
+        break;
+    case 4:
+        break;
+
+    default:
+        break;
+    }
+
 
     scene->addPixmap(pixmap);
     //生成一张位图

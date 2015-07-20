@@ -2,7 +2,6 @@ INPUT(
 ./release\main.o
 ./release\mainwindow.o
 ./release\mainwidget.o
-./release\firstwidget.o
 ./release\blureffect.o
 ./release\blurpicker.o
 ./release\titlebar.o
@@ -26,14 +25,9 @@ INPUT(
 ./release\motordemonstrate.o
 ./release\portsimulation.o
 ./release\shakesimulator.o
-./release\musicwidget.o
-./release\mylabel.o
-./release\pianowidget.o
-./release\buzwidget.o
 ./release\qrc_images.o
 ./release\moc_mainwindow.o
 ./release\moc_mainwidget.o
-./release\moc_firstwidget.o
 ./release\moc_blurpicker.o
 ./release\moc_widget.o
 ./release\moc_ledsimulation.o
@@ -54,8 +48,4 @@ INPUT(
 ./release\moc_motordemonstrate.o
 ./release\moc_portsimulation.o
 ./release\moc_shakesimulator.o
-./release\moc_musicwidget.o
-./release\moc_mylabel.o
-./release\moc_pianowidget.o
-./release\moc_buzwidget.o
 );

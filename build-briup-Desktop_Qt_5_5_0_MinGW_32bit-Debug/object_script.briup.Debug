@@ -2,7 +2,6 @@ INPUT(
 ./debug\main.o
 ./debug\mainwindow.o
 ./debug\mainwidget.o
-./debug\firstwidget.o
 ./debug\blureffect.o
 ./debug\blurpicker.o
 ./debug\titlebar.o
@@ -26,14 +25,9 @@ INPUT(
 ./debug\motordemonstrate.o
 ./debug\portsimulation.o
 ./debug\shakesimulator.o
-./debug\musicwidget.o
-./debug\mylabel.o
-./debug\pianowidget.o
-./debug\buzwidget.o
 ./debug\qrc_images.o
 ./debug\moc_mainwindow.o
 ./debug\moc_mainwidget.o
-./debug\moc_firstwidget.o
 ./debug\moc_blurpicker.o
 ./debug\moc_widget.o
 ./debug\moc_ledsimulation.o
@@ -54,8 +48,4 @@ INPUT(
 ./debug\moc_motordemonstrate.o
 ./debug\moc_portsimulation.o
 ./debug\moc_shakesimulator.o
-./debug\moc_musicwidget.o
-./debug\moc_mylabel.o
-./debug\moc_pianowidget.o
-./debug\moc_buzwidget.o
 );
