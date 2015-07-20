@@ -11,7 +11,6 @@
 
 
 grapWidget::grapWidget(QWidget *parent)
-
 {
     QGraphicsScene *scene = new QGraphicsScene(this);
     setScene(scene);
