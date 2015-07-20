@@ -38,7 +38,11 @@ SOURCES += main.cpp\
     motordemonstrate.cpp \
     portsimulation.cpp \
     shakesimulator.cpp \
-    rfidsimulation.cpp
+    rfidsimulation.cpp \
+    buzzersimulator.cpp \
+    musicwidget.cpp \
+    mylabel.cpp \
+    pianowidget.cpp
 
 HEADERS  += mainwindow.h \
     mainwidget.h \
@@ -66,7 +70,11 @@ HEADERS  += mainwindow.h \
     motordemonstrate.h \
     portsimulation.h \
     shakesimulator.h \
-    rfidsimulation.h
+    rfidsimulation.h \
+    buzzersimulator.h \
+    musicwidget.h \
+    mylabel.h \
+    pianowidget.h
 
 FORMS    += mainwindow.ui \
     mainwidget.ui \
@@ -85,7 +93,10 @@ FORMS    += mainwindow.ui \
     motordemonstrate.ui \
     portsimulation.ui \
     shakesimulator.ui \
-    rfidsimulation.ui
+    rfidsimulation.ui \
+    buzzersimulator.ui \
+    musicwidget.ui \
+    pianowidget.ui
 
 RESOURCES += \
     images.qrc \

@@ -26,6 +26,10 @@ INPUT(
 ./debug\portsimulation.o
 ./debug\shakesimulator.o
 ./debug\rfidsimulation.o
+./debug\buzzersimulator.o
+./debug\musicwidget.o
+./debug\mylabel.o
+./debug\pianowidget.o
 ./debug\qrc_images.o
 ./debug\moc_mainwindow.o
 ./debug\moc_mainwidget.o
@@ -50,4 +54,8 @@ INPUT(
 ./debug\moc_portsimulation.o
 ./debug\moc_shakesimulator.o
 ./debug\moc_rfidsimulation.o
+./debug\moc_buzzersimulator.o
+./debug\moc_musicwidget.o
+./debug\moc_mylabel.o
+./debug\moc_pianowidget.o
 );

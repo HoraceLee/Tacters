@@ -61,6 +61,7 @@
 #include "shakesimulator.h"
 #include "grapwidget.h"
 #include "rfidsimulation.h"
+#include "buzzersimulator.h"
 
 class Picker;
 //class BuzWidget;
@@ -101,7 +102,7 @@ private:
     portsimulation *port;
     ShakeSimulator *shake;
     RFIDsimulation *rfid;
-
+    BuzzerSimulator *buzzer;
     grapWidget *grapLed;
 };
 #endif

@@ -66,7 +66,7 @@ void RFIDsimulation::readSlot(){
     QByteArray data;
     data=this->serialport->readAll();//接受数据
     if(data.isEmpty()){
-        ui->RFIDcard->clear();
+       ui->RFIDcard->clear();
        return;
     }
     QPixmap  card ;
@@ -78,4 +78,10 @@ void RFIDsimulation::readSlot(){
   }
     QString str=QString(QLatin1String(order));
     ui->contents->setText(str);
+}
+
+void RFIDsimulation::on_closeBtn_clicked()
+{
+    this->close();
+    this->serialport->close();
 }

@@ -53,6 +53,7 @@
 #include "shakesimulator.h"
 #include "grapwidget.h"
 #include "rfidsimulation.h"
+#include "buzzersimulator.h"
 
 class FileUtils;
 
@@ -376,8 +377,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 4:
-//                buz = new BuzWidget;
-//                buz.show();
+                buzzer = new BuzzerSimulator;
+                buzzer->show();
                 break;
             }
             break;

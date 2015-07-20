@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>pianowidget</class>
+ <widget class="QWidget" name="pianowidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>129</x>
+     <y>60</y>
+     <width>447</width>
+     <height>348</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/images/piano.png);</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="audiolabel">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>170</y>
+     <width>140</width>
+     <height>220</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="images.qrc">:/images/audio.png</pixmap>
+   </property>
+  </widget>
+  <widget class="QLabel" name="musiclabel">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>250</y>
+     <width>40</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="musiclabel2">
+   <property name="geometry">
+    <rect>
+     <x>810</x>
+     <y>180</y>
+     <width>40</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="pianolabel1">
+   <property name="geometry">
+    <rect>
+     <x>129</x>
+     <y>62</y>
+     <width>64</width>
+     <height>346</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="pianolabel2">
+   <property name="geometry">
+    <rect>
+     <x>193</x>
+     <y>61</y>
+     <width>64</width>
+     <height>346</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="pianolabel3">
+   <property name="geometry">
+    <rect>
+     <x>257</x>
+     <y>64</y>
+     <width>62</width>
+     <height>344</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="pianolabel4">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>63</y>
+     <width>64</width>
+     <height>344</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="pianolabel5">
+   <property name="geometry">
+    <rect>
+     <x>382</x>
+     <y>63</y>
+     <width>64</width>
+     <height>344</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="pianolabel6">
+   <property name="geometry">
+    <rect>
+     <x>447</x>
+     <y>63</y>
+     <width>64</width>
+     <height>344</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="MyLabel" name="pianolabel7">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>63</y>
+     <width>64</width>
+     <height>344</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyLabel</class>
+   <extends>QLabel</extends>
+   <header location="global">mylabel.h</header>
+   <slots>
+    <signal>LabelClicked()</signal>
+    <signal>LabelRelease()</signal>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

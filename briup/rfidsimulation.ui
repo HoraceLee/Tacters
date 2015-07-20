@@ -102,11 +102,39 @@
     <string/>
    </property>
   </widget>
+  <widget class="QPushButton" name="closeBtn">
+   <property name="geometry">
+    <rect>
+     <x>960</x>
+     <y>0</y>
+     <width>40</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/close3.png</normaloff>
+     <normalon>:/images/close3.png</normalon>:/images/close3.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>60</width>
+     <height>60</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
   <zorder>RFIDreader</zorder>
   <zorder>signal</zorder>
   <zorder>RFIDcard</zorder>
   <zorder>label</zorder>
   <zorder>contents</zorder>
+  <zorder>closeBtn</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

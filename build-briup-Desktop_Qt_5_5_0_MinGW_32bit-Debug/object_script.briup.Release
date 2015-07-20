@@ -26,6 +26,10 @@ INPUT(
 ./release\portsimulation.o
 ./release\shakesimulator.o
 ./release\rfidsimulation.o
+./release\buzzersimulator.o
+./release\musicwidget.o
+./release\mylabel.o
+./release\pianowidget.o
 ./release\qrc_images.o
 ./release\moc_mainwindow.o
 ./release\moc_mainwidget.o
@@ -50,4 +54,8 @@ INPUT(
 ./release\moc_portsimulation.o
 ./release\moc_shakesimulator.o
 ./release\moc_rfidsimulation.o
+./release\moc_buzzersimulator.o
+./release\moc_musicwidget.o
+./release\moc_mylabel.o
+./release\moc_pianowidget.o
 );

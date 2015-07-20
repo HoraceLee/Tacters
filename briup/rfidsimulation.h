@@ -21,6 +21,8 @@ private slots:
     void readSlot();
 
 
+    void on_closeBtn_clicked();
+
 private:
     Ui::RFIDsimulation    *ui;
     QSerialPort*   serialport;
