@@ -63,8 +63,10 @@
 #include "musicwidget.h"
 #include "pianowidget.h"
 
+#include "grapwidget.h"
+
 class Picker;
-class BuzWidget;
+//class BuzWidget;
 
 class Item : public QObject, public QGraphicsPixmapItem
 {
@@ -101,6 +103,8 @@ private:
     MotorDemonstrate *motor;
     portsimulation *port;
     ShakeSimulator *shake;
-    BuzWidget *buz;
+//    BuzWidget *buz;
+
+    grapWidget *grapLed;
 };
 #endif

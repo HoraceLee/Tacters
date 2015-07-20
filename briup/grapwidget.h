@@ -14,7 +14,7 @@ class grapWidget : public QGraphicsView
 
 public:
     explicit grapWidget(QWidget *parent = 0);
-   // ~grapWidget();
+    ~grapWidget();
 
 protected:
 #ifndef QT_NO_WHEELEVENT

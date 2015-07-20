@@ -15,7 +15,6 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     mainwidget.cpp \
-    firstwidget.cpp \
     blureffect.cpp \
     blurpicker.cpp \
     titlebar.cpp \
@@ -46,7 +45,6 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h \
     mainwidget.h \
-    firstwidget.h \
     blureffect.h \
     blurpicker.h \
     titlebar.h \
@@ -78,7 +76,6 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     mainwidget.ui \
-    firstwidget.ui \
     widget.ui \
     ledsimulation.ui \
     grapwidget.ui \

@@ -37,6 +37,10 @@ grapWidget::grapWidget(QWidget *parent)
     }
 //! [0]
 
+grapWidget::~grapWidget(){
+    delete ui;
+}
+
 #ifndef QT_NO_WHEELEVENT
 //! [5]
 //!

@@ -54,9 +54,10 @@
 #include "buzwidget.h"
 #include "pianowidget.h"
 #include "musicwidget.h"
+#include "grapwidget.h"
 
 class FileUtils;
-//class BuzWidget;
+class BuzWidget;
 
 Item::Item(int id, const QPixmap &pixmap,Picker *Picker, QGraphicsItem *parent)
     : QGraphicsPixmapItem(pixmap, parent),picker(Picker)
@@ -82,7 +83,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 1:
-
+                grapLed = new grapWidget;
+                grapLed->show();
                 break;
             case 2:
 
@@ -91,7 +93,7 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
 
                 break;
             case 4:
-                leds=new ledsimulation;
+                leds = new ledsimulation;
                 leds->show();
                 break;
             }
