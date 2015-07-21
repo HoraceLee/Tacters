@@ -15,10 +15,12 @@ public:
 protected:
     void mousePressEvent(QMouseEvent *event);
     void mouseReleaseEvent(QMouseEvent *event);
+//    void keyPressEvent(QKeyEvent *event);
     QTimer* timer;
 signals:
     void LabelClicked();
     void LabelRelease();
+//    void LabelKeyPress(QKeyEvent *event);
 };
 
 #endif // MYLABEL

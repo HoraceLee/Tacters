@@ -9,7 +9,7 @@
  * @return
  */
 bool isFrame(QByteArray data,unsigned char header,int length){
-    if(data==NULL){
+    if(data == NULL){
         return false;
     }
     if(data.isEmpty()){          //
@@ -29,7 +29,7 @@ bool isFrame(QByteArray data,unsigned char header,int length){
  * @return
  */
 bool isFrame(QByteArray data, unsigned char header){\
-    if(data==NULL){
+    if(data == NULL){
         return false;
     }
     if(data.isEmpty()){          //

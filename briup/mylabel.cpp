@@ -25,4 +25,9 @@ void MyLabel::mouseReleaseEvent( QMouseEvent *event )
      emit LabelRelease();
 }
 
+//void MyLabel::keyPressEvent(QKeyEvent *event)
+//{
+//    emit LabelKeyPress(event);
+//}
+
 

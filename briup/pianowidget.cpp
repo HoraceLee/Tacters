@@ -20,7 +20,7 @@ pianowidget::pianowidget(QWidget *parent) :
     //设置设备号
         foreach (const QSerialPortInfo &info, QSerialPortInfo::availablePorts())
         {
-        serialport->setPortName(info.portName());
+            serialport->setPortName(info.portName());
         }
         serialport->open(QIODevice::ReadWrite);
         serialport->setBaudRate(9600);
@@ -185,13 +185,17 @@ void pianowidget::closeport(){
     if(serialport==NULL){
         return;
     }
+    if(!serialport->isOpen()){
+        serialport = NULL;
+        return;
+    }
     serialport->close();
     serialport = NULL;
 }
 
 void pianowidget::open(){
 
-    if(this->serialport!=NULL){
+    if(this->serialport != NULL){
         return ;
     }
     //连接设备

@@ -4,9 +4,7 @@
         <file>images/LEDoff.png</file>
         <file>images/LEDon.png</file>
         <file>images/background.jpg</file>
-        <file>images/Image.png</file>
         <file>images/timericon.png</file>
-        <file>images/circuitLed.png</file>
         <file>images/audioLabel.png</file>
         <file>images/enterLabel.png</file>
         <file>images/infarredLabel.png</file>
@@ -45,12 +43,6 @@
         <file>images/enter_hashtag.png</file>
         <file>images/enter_star.png</file>
         <file>images/enterBack.png</file>
-        <file>images/page_1_7.png</file>
-        <file>images/page_2_8.png</file>
-        <file>images/page_3_9.png</file>
-        <file>images/page_4_10.png</file>
-        <file>images/page_5_11.png</file>
-        <file>images/page_6_12.png</file>
         <file>images/bomb.png</file>
         <file>images/boomggg.png</file>
         <file>images/humidity_icon.png</file>
@@ -67,9 +59,6 @@
         <file>images/night_to_day.gif</file>
         <file>images/Turntable.png</file>
         <file>images/shock.gif</file>
-        <file>images/bufferfly1.gif</file>
-        <file>images/bufferfly2.gif</file>
-        <file>images/flower1.png</file>
         <file>images/1.png</file>
         <file>images/2.png</file>
         <file>images/3.png</file>
@@ -92,5 +81,22 @@
         <file>images/RFIDcard.png</file>
         <file>images/RFIDReader.png</file>
         <file>images/signal3.gif</file>
+        <file>images/page_0.png</file>
+        <file>images/page_1.png</file>
+        <file>images/page_2.png</file>
+        <file>images/page_3.png</file>
+        <file>images/page_4.png</file>
+        <file>images/page_5.png</file>
+        <file>images/page_6.png</file>
+        <file>images/page_7.png</file>
+        <file>images/page_8.png</file>
+        <file>images/page_9.png</file>
+        <file>images/page_10.png</file>
+        <file>images/page_11.png</file>
+        <file>images/page_12.png</file>
+        <file>images/page_end.png</file>
+        <file>images/page_first.png</file>
+        <file>images/page_hashtag.png</file>
+        <file>images/waterwear.gif</file>
     </qresource>
 </RCC>

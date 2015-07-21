@@ -22,7 +22,6 @@ INPUT(
 ./debug\item.o
 ./debug\picker.o
 ./debug\lightdemonstrate.o
-./debug\motordemonstrate.o
 ./debug\portsimulation.o
 ./debug\shakesimulator.o
 ./debug\rfidsimulation.o
@@ -31,6 +30,7 @@ INPUT(
 ./debug\mylabel.o
 ./debug\pianowidget.o
 ./debug\frame.o
+./debug\motordemonstrate.o
 ./debug\qrc_images.o
 ./debug\moc_mainwindow.o
 ./debug\moc_mainwidget.o
@@ -51,7 +51,6 @@ INPUT(
 ./debug\moc_item.o
 ./debug\moc_picker.o
 ./debug\moc_lightdemonstrate.o
-./debug\moc_motordemonstrate.o
 ./debug\moc_portsimulation.o
 ./debug\moc_shakesimulator.o
 ./debug\moc_rfidsimulation.o
@@ -59,4 +58,5 @@ INPUT(
 ./debug\moc_musicwidget.o
 ./debug\moc_mylabel.o
 ./debug\moc_pianowidget.o
+./debug\moc_motordemonstrate.o
 );

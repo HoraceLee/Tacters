@@ -35,7 +35,6 @@ SOURCES += main.cpp\
     item.cpp \
     picker.cpp \
     lightdemonstrate.cpp \
-    motordemonstrate.cpp \
     portsimulation.cpp \
     shakesimulator.cpp \
     rfidsimulation.cpp \
@@ -43,7 +42,8 @@ SOURCES += main.cpp\
     musicwidget.cpp \
     mylabel.cpp \
     pianowidget.cpp \
-    frame.cpp
+    frame.cpp \
+    motordemonstrate.cpp
 
 HEADERS  += mainwindow.h \
     mainwidget.h \
@@ -68,7 +68,6 @@ HEADERS  += mainwindow.h \
     item.h \
     picker.h \
     lightdemonstrate.h \
-    motordemonstrate.h \
     portsimulation.h \
     shakesimulator.h \
     rfidsimulation.h \
@@ -76,7 +75,8 @@ HEADERS  += mainwindow.h \
     musicwidget.h \
     mylabel.h \
     pianowidget.h \
-    frame.h
+    frame.h \
+    motordemonstrate.h
 
 FORMS    += mainwindow.ui \
     mainwidget.ui \
@@ -90,15 +90,15 @@ FORMS    += mainwindow.ui \
     histroyfiledialog.ui \
     humiditywindow.ui \
     temperaturemainwindow.ui \
-    buttondemonstrate.ui \
     lightdemonstrate.ui \
-    motordemonstrate.ui \
     portsimulation.ui \
     shakesimulator.ui \
     rfidsimulation.ui \
     buzzersimulator.ui \
     musicwidget.ui \
-    pianowidget.ui
+    pianowidget.ui \
+    buttondemonstrate.ui \
+    motordemonstrate.ui
 
 RESOURCES += \
     images.qrc \

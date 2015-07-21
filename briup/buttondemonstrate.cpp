@@ -76,103 +76,103 @@ void buttonDemonstrate::readSlot()
     order=(unsigned char)data.at(1);
     if(order < 0 | order > 15)
         return;
-    ui->pageCover->setGeometry(50,130,61,51);
-    ui->pageContents->setGeometry(130,130,61,51);
-    ui->pageIntro->setGeometry(210,130,61,51);
-    ui->page_1->setGeometry(290,120,61,61);
-    ui->page_2->setGeometry(360,130,61,51);
-    ui->page_3->setGeometry(420,130,81,61);
-    ui->page_4->setGeometry(500,130,61,51);
-    ui->page_5->setGeometry(570,130,61,51);
-    ui->page_6->setGeometry(50,190,61,51);
-    ui->page_7->setGeometry(130,180,61,61);
-    ui->page_8->setGeometry(210,190,61,51);
-    ui->page_9->setGeometry(280,186,81,61);
-    ui->page_10->setGeometry(360,190,61,51);
-    ui->page_11->setGeometry(430,190,61,51);
-    ui->page_12->setGeometry(500,190,61,51);
-    ui->pageEnd->setGeometry(570,180,61,61);
+    ui->pageCover->setGeometry(50,90,61,51);
+    ui->pageContents->setGeometry(130,90,61,51);
+    ui->pageIntro->setGeometry(210,90,61,51);
+    ui->page_1->setGeometry(290,80,61,51);
+    ui->page_2->setGeometry(360,90,61,51);
+    ui->page_3->setGeometry(420,90,81,61);
+    ui->page_4->setGeometry(500,90,61,51);
+    ui->page_5->setGeometry(570,90,61,51);
+    ui->page_6->setGeometry(50,150,61,51);
+    ui->page_7->setGeometry(130,140,61,61);
+    ui->page_8->setGeometry(210,150,61,51);
+    ui->page_9->setGeometry(280,146,81,61);
+    ui->page_10->setGeometry(360,150,61,51);
+    ui->page_11->setGeometry(430,150,61,51);
+    ui->page_12->setGeometry(500,150,61,51);
+    ui->pageEnd->setGeometry(570,140,61,61);
     QPixmap enterPixmap;
     switch (order) {
     case 0:
         enterPixmap.load(":/images/enter_0.png");
         ui->enterBtn->setPixmap(enterPixmap);
-        ui->pageIntro->setGeometry(100, 250, 530, 350);
+        ui->pageIntro->setGeometry(100, 210, 530, 400);
         break;
     case 1:
         enterPixmap.load(":/images/enter_1.png");
         ui->enterBtn->setPixmap(enterPixmap);
-        ui->page_1->setGeometry(100, 250, 530, 350);
+        ui->page_1->setGeometry(100, 210, 530, 400);
         break;
     case 2:
         enterPixmap.load(":/images/enter_2.png");
         ui->enterBtn->setPixmap(enterPixmap);
-        ui->page_2->setGeometry(100, 250, 530, 350);
+        ui->page_2->setGeometry(100, 210, 530, 400);
         break;
     case 3:
         enterPixmap.load(":/images/enter_3.png");
         ui->enterBtn->setPixmap(enterPixmap);
-        ui->page_3->setGeometry(100, 250, 530, 350);
+        ui->page_3->setGeometry(100, 210, 530, 400);
         break;
     case 4:
         enterPixmap.load(":/images/enter_4.png");
         ui->enterBtn->setPixmap(enterPixmap);
-        ui->page_4->setGeometry(100, 250, 530, 350);
+        ui->page_4->setGeometry(100, 210, 530, 400);
         break;
     case 5:
         enterPixmap.load(":/images/enter_5.png");
         ui->enterBtn->setPixmap(enterPixmap);
-        ui->page_5->setGeometry(100, 250, 530, 350);
+        ui->page_5->setGeometry(100, 210, 530, 400);
         break;
     case 6:
         enterPixmap.load(":/images/enter_6.png");
         ui->enterBtn->setPixmap(enterPixmap);
-        ui->page_6->setGeometry(100, 250, 530, 350);
+        ui->page_6->setGeometry(100, 210, 530, 400);
         break;
     case 7:
         enterPixmap.load(":/images/enter_7.png");
         ui->enterBtn->setPixmap(enterPixmap);
-        ui->page_7->setGeometry(100, 250, 530, 350);
+        ui->page_7->setGeometry(100, 210, 530, 400);
         break;
     case 8:
         enterPixmap.load(":/images/enter_8.png");
         ui->enterBtn->setPixmap(enterPixmap);
-        ui->page_8->setGeometry(100, 250, 530, 350);
+        ui->page_8->setGeometry(100, 210, 530, 400);
         break;
     case 9:
         enterPixmap.load(":/images/enter_9.png");
         ui->enterBtn->setPixmap(enterPixmap);
-        ui->page_9->setGeometry(100, 250, 530, 350);
+        ui->page_9->setGeometry(100, 210, 530, 400);
         break;
     case 10:
         enterPixmap.load(":/images/enter_A.png");
         ui->enterBtn->setPixmap(enterPixmap);
-        ui->page_10->setGeometry(100, 250, 530, 350);
+        ui->page_10->setGeometry(100, 210, 530, 400);
         break;
     case 11:
         enterPixmap.load(":/images/enter_B.png");
         ui->enterBtn->setPixmap(enterPixmap);
-        ui->page_11->setGeometry(100, 250, 530, 350);
+        ui->page_11->setGeometry(100, 210, 530, 400);
         break;
     case 12:
         enterPixmap.load(":/images/enter_C.png");
         ui->enterBtn->setPixmap(enterPixmap);
-        ui->page_12->setGeometry(100, 250, 530, 350);
+        ui->page_12->setGeometry(100, 210, 530, 400);
         break;
     case 13:
         enterPixmap.load(":/images/enter_D.png");
         ui->enterBtn->setPixmap(enterPixmap);
-        ui->pageEnd->setGeometry(100, 250, 530, 350);
+        ui->pageEnd->setGeometry(100, 210, 530, 400);
         break;
     case 14:
         enterPixmap.load(":/images/enter_star.png");
         ui->enterBtn->setPixmap(enterPixmap);
-        ui->pageCover->setGeometry(100, 250, 530, 350);
+        ui->pageCover->setGeometry(100, 210, 530, 400);
         break;
     case 15:
         enterPixmap.load(":/images/enter_hashtag.png");
         ui->enterBtn->setPixmap(enterPixmap);
-        ui->pageContents->setGeometry(100, 250, 530, 350);
+        ui->pageContents->setGeometry(100, 210, 530, 400);
         break;
     default:
         break;

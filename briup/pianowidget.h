@@ -14,8 +14,8 @@ class pianowidget : public QWidget
 public:
     explicit pianowidget(QWidget *parent = 0);
     ~pianowidget();
-     void closeport();
-     void open();
+    void closeport();
+    void open();
 
 private slots:
     void on_pianolabel1_LabelClicked();

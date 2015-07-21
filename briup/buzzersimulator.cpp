@@ -36,17 +36,20 @@ BuzzerSimulator::~BuzzerSimulator()
 
 void BuzzerSimulator::on_pianoBtn_clicked()
 {
+    qDebug()<<"on_pianoBtn_clicked()"<<endl;
     layout->setCurrentIndex(0);
     musicWidget->closeport();//关闭串口
+    qDebug()<<"musicWidget->closeport();//关闭串口"<<endl;
     pianoWidget->open();
 }
 
 void BuzzerSimulator::on_musicBtn_clicked()
 {
+    qDebug()<<"on_musicBtn_clicked()"<<endl;
     layout->setCurrentIndex(1);
-     pianoWidget->closeport();//关闭串口
-     qDebug()<<"--------------";
-     musicWidget->open();
+    pianoWidget->closeport();//关闭串口
+    qDebug()<<"pianoWidget->closeport();//关闭串口"<<endl;
+    musicWidget->open();
 }
 
 void BuzzerSimulator::on_closeBtn_clicked()

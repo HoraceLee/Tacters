@@ -8,7 +8,6 @@ musicwidget::musicwidget(QWidget *parent) :
     ui(new Ui::musicwidget)
 {
     ui->setupUi(this);
-
 }
 
 musicwidget::~musicwidget()
@@ -23,7 +22,6 @@ void musicwidget::on_comboBox_currentIndexChanged(int index)
 
 void musicwidget::on_continueBtn_clicked()
 {
-
     char send[4];
     send[0]=0x10;
     send[1]=0x11;
@@ -58,14 +56,18 @@ void musicwidget::on_stopBtn_clicked()
     send[1]=0x12;
     send[3]=0xff;
     if(ui->comboBox->currentIndex()==1){
-        send[2]=0x02;
+        send[2] = 0x02;
     }else{
-        send[2]=0x01;
+        send[2] = 0x01;
     }
     serialport->write(send);
 }
 void musicwidget::closeport(){
-    if(serialport==NULL){
+    if(serialport == NULL){
+        return;
+    }
+    if(!serialport->isOpen()){
+        serialport = NULL;
         return;
     }
     serialport->close();
@@ -105,7 +107,7 @@ void musicwidget::open()
     //设置设备号
         foreach (const QSerialPortInfo &info, QSerialPortInfo::availablePorts())
         {
-        serialport->setPortName(info.portName());
+            serialport->setPortName(info.portName());
         }
         serialport->open(QIODevice::ReadWrite);
         serialport->setBaudRate(9600);

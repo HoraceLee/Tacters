@@ -18,15 +18,14 @@ ShakeSimulator::ShakeSimulator(QWidget *parent) :
 
     this->setWindowTitle("ShakeSimulator");
     char *Fname[2];
-    Fname[0]=(char *)":/images/shock.gif";
+    Fname[0]=(char *)":/images/waterwear.gif";
     QMovie *m1 =new  QMovie();
     ui->label->setMovie(m1);
     m1->setFileName(Fname[0]);
     ui->label->movie()->start();
     ui->label->movie()->stop();
-
-   // bool b = connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(on_pushButton_clicked()));
-   //Q_ASSERT(b);
+//    bool b = connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(on_pushButton_clicked()));
+//   Q_ASSERT(b);
    bool  b = connect(m_timer,SIGNAL(timeout()),this,SLOT(timerOut()));
     Q_ASSERT(b);
     m_timer->setInterval(40);
