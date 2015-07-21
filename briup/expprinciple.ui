@@ -78,6 +78,9 @@
     <bool>true</bool>
    </property>
   </widget>
+  <zorder>label</zorder>
+  <zorder>closeBtn</zorder>
+  <zorder>expPrinLabel</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
