@@ -98,5 +98,6 @@
         <file>images/page_first.png</file>
         <file>images/page_hashtag.png</file>
         <file>images/waterwear.gif</file>
+        <file>images/startBtn.png</file>
     </qresource>
 </RCC>

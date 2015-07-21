@@ -46,7 +46,8 @@ SOURCES += main.cpp\
     motordemonstrate.cpp \
     expcode.cpp \
     expknowledge.cpp \
-    expprinciple.cpp
+    expprinciple.cpp \
+    complex.cpp
 
 HEADERS  += mainwindow.h \
     mainwidget.h \
@@ -82,7 +83,8 @@ HEADERS  += mainwindow.h \
     motordemonstrate.h \
     expcode.h \
     expknowledge.h \
-    expprinciple.h
+    expprinciple.h \
+    complex.h
 
 FORMS    += mainwindow.ui \
     mainwidget.ui \
@@ -107,7 +109,8 @@ FORMS    += mainwindow.ui \
     motordemonstrate.ui \
     expcode.ui \
     expknowledge.ui \
-    expprinciple.ui
+    expprinciple.ui \
+    complex.ui
 
 RESOURCES += \
     images.qrc \

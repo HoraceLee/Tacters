@@ -35,7 +35,7 @@ expPrinciple::expPrinciple(int expPrinNum,QWidget *parent) :
     stream.setCodec(code);
     switch(expPrinNum){
     case 0:
-        file.setFileName("E:/briup_text/principal/LEDKnowledge.txt");
+        file.setFileName("E:/briup_text/principal/LEDPrinciple.txt");
         break;
     case 1:
         file.setFileName("E:/briup_text/principal/timerPrincipal.txt");

@@ -65,6 +65,7 @@
 #include "expcode.h"
 #include "expprinciple.h"
 #include "expknowledge.h"
+#include "complex.h"
 
 class Picker;
 //class BuzWidget;
@@ -110,5 +111,6 @@ private:
     expPrinciple *principle;
     expKnowledge *knowledge;
     expCode *code;
+    Complex *com;
 };
 #endif

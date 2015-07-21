@@ -57,6 +57,7 @@
 #include "expcode.h"
 #include "expprinciple.h"
 #include "expknowledge.h"
+#include "complex.h"
 
 class FileUtils;
 
@@ -447,7 +448,8 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
                 principle->show();
                 break;
             case 4:
-
+                com = new Complex;
+                com->show();
                 break;
             }
             break;
