@@ -35,46 +35,46 @@ expPrinciple::expPrinciple(int expPrinNum,QWidget *parent) :
     stream.setCodec(code);
     switch(expPrinNum){
     case 0:
-        file.setFileName("E:/briup_text/knowledge/LEDKnowledge.txt");
+        file.setFileName("E:/briup_text/principal/LEDKnowledge.txt");
         break;
     case 1:
-        file.setFileName("E:/briup_text/knowledge/timerPrincipal.txt");
+        file.setFileName("E:/briup_text/principal/timerPrincipal.txt");
         break;
     case 2:
-        file.setFileName("E:/briup_text/knowledge/temPrincipal.txt");
+        file.setFileName("E:/briup_text/principal/temPrincipal.txt");
         break;
     case 3:
-        file.setFileName("E:/briup_text/knowledge/temhumPrincipal.txt");
+        file.setFileName("E:/briup_text/principal/temhumPrincipal.txt");
         break;
     case 4:
-        file.setFileName("E:/briup_text/knowledge/shockPrincipal.txt");
+        file.setFileName("E:/briup_text/principal/shockPrincipal.txt");
         break;
     case 5:
-        file.setFileName("E:/briup_text/knowledge/RFIDPrincipal.txt");
+        file.setFileName("E:/briup_text/principal/RFIDPrincipal.txt");
         break;
     case 6:
-        file.setFileName("E:/briup_text/knowledge/portPrincipal.txt");
+        file.setFileName("E:/briup_text/principal/portPrincipal.txt");
         break;
     case 7:
-        file.setFileName("E:/briup_text/knowledge/motorPrincipal.txt");
+        file.setFileName("E:/briup_text/principal/motorPrincipal.txt");
         break;
     case 8:
-        file.setFileName("E:/briup_text/knowledge/lightPrincipal.txt");
+        file.setFileName("E:/briup_text/principal/lightPrincipal.txt");
         break;
     case 9:
-        file.setFileName("E:/briup_text/knowledge/LCDPrincipal.txt");
+        file.setFileName("E:/briup_text/principal/LCDPrincipal.txt");
         break;
     case 10:
-        file.setFileName("E:/briup_text/knowledge/interruptPrincipal.txt");
+        file.setFileName("E:/briup_text/principal/interruptPrincipal.txt");
         break;
     case 11:
-        file.setFileName("E:/briup_text/knowledge/infraredPrincipal.txt");
+        file.setFileName("E:/briup_text/principal/infraredPrincipal.txt");
         break;
     case 12:
-        file.setFileName("E:/briup_text/knowledge/enterPrincipal.txt");
+        file.setFileName("E:/briup_text/principal/enterPrincipal.txt");
         break;
     case 13:
-        file.setFileName("E:/briup_text/knowledge/buzzerPrincipal.txt");
+        file.setFileName("E:/briup_text/principal/buzzerPrincipal.txt");
         break;
     }
     file.open(QIODevice::ReadOnly|QIODevice::Text);
