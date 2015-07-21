@@ -32,46 +32,46 @@ expCode::expCode(int expCodeNum,QWidget *parent) :
     stream.setCodec(code);
     switch(expCodeNum){
     case 0:
-        file.setFileName("E:/briup_text/code/LEDCode.txt");
+        file.setFileName("E:/briup_text/LEDCode.txt");
         break;
     case 1:
-        file.setFileName("E:/briup_text/code/timerCode.txt");
+        file.setFileName("E:/briup_text/timerCode.txt");
         break;
     case 2:
-        file.setFileName("E:/briup_text/code/temCode.txt");
+        file.setFileName("E:/briup_text/temCode.txt");
         break;
     case 3:
-        file.setFileName("E:/briup_text/code/temhuCode.txt");
+        file.setFileName("E:/briup_text/temhuCode.txt");
         break;
     case 4:
-        file.setFileName("E:/briup_text/code/shockCode.txt");
+        file.setFileName("E:/briup_text/shockCode.txt");
         break;
     case 5:
-        file.setFileName("E:/briup_text/code/RFIDCode.txt");
+        file.setFileName("E:/briup_text/RFIDCode.txt");
         break;
     case 6:
-        file.setFileName("E:/briup_text/code/portCode.txt");
+        file.setFileName("E:/briup_text/portCode.txt");
         break;
     case 7:
-        file.setFileName("E:/briup_text/code/motorCode.txt");
+        file.setFileName("E:/briup_text/motorCode.txt");
         break;
     case 8:
-        file.setFileName("E:/briup_text/code/lightCode.txt");
+        file.setFileName("E:/briup_text/lightCode.txt");
         break;
     case 9:
-        file.setFileName("E:/briup_text/code/LCDCode.txt");
+        file.setFileName("E:/briup_text/LCDCode.txt");
         break;
     case 10:
-        file.setFileName("E:/briup_text/code/interruptCode.txt");
+        file.setFileName("E:/briup_text/interruptCode.txt");
         break;
     case 11:
-        file.setFileName("E:/briup_text/code/infarredCode.txt");
+        file.setFileName("E:/briup_text/infarredCode.txt");
         break;
     case 12:
-        file.setFileName("E:/briup_text/code/enterCode.txt");
+        file.setFileName("E:/briup_text/enterCode.txt");
         break;
     case 13:
-        file.setFileName("E:/briup_text/code/buzzerCode.txt");
+        file.setFileName("E:/briup_text/buzzerCode.txt");
         break;
     }
     file.open(QIODevice::ReadOnly|QIODevice::Text);

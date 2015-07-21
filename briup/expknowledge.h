@@ -16,6 +16,8 @@ public:
     ~expKnowledge();
 
 private slots:
+    void on_ok_Btn_clicked();
+
     void on_closeBtn_clicked();
 
 private:
