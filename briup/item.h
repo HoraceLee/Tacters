@@ -62,6 +62,9 @@
 #include "grapwidget.h"
 #include "rfidsimulation.h"
 #include "buzzersimulator.h"
+#include "expcode.h"
+#include "expprinciple.h"
+#include "expknowledge.h"
 
 class Picker;
 //class BuzWidget;
@@ -104,5 +107,8 @@ private:
     RFIDsimulation *rfid;
     BuzzerSimulator *buzzer;
     grapWidget *grapLed;
+    expPrinciple *principle;
+    expKnowledge *knowledge;
+    expCode *code;
 };
 #endif

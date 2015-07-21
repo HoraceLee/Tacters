@@ -43,7 +43,10 @@ SOURCES += main.cpp\
     mylabel.cpp \
     pianowidget.cpp \
     frame.cpp \
-    motordemonstrate.cpp
+    motordemonstrate.cpp \
+    expcode.cpp \
+    expknowledge.cpp \
+    expprinciple.cpp
 
 HEADERS  += mainwindow.h \
     mainwidget.h \
@@ -76,7 +79,10 @@ HEADERS  += mainwindow.h \
     mylabel.h \
     pianowidget.h \
     frame.h \
-    motordemonstrate.h
+    motordemonstrate.h \
+    expcode.h \
+    expknowledge.h \
+    expprinciple.h
 
 FORMS    += mainwindow.ui \
     mainwidget.ui \
@@ -98,7 +104,10 @@ FORMS    += mainwindow.ui \
     musicwidget.ui \
     pianowidget.ui \
     buttondemonstrate.ui \
-    motordemonstrate.ui
+    motordemonstrate.ui \
+    expcode.ui \
+    expknowledge.ui \
+    expprinciple.ui
 
 RESOURCES += \
     images.qrc \

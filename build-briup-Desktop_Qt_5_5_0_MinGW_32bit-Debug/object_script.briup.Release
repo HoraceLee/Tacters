@@ -31,6 +31,9 @@ INPUT(
 ./release\pianowidget.o
 ./release\frame.o
 ./release\motordemonstrate.o
+./release\expcode.o
+./release\expknowledge.o
+./release\expprinciple.o
 ./release\qrc_images.o
 ./release\moc_mainwindow.o
 ./release\moc_mainwidget.o
@@ -59,4 +62,7 @@ INPUT(
 ./release\moc_mylabel.o
 ./release\moc_pianowidget.o
 ./release\moc_motordemonstrate.o
+./release\moc_expcode.o
+./release\moc_expknowledge.o
+./release\moc_expprinciple.o
 );

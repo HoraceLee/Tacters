@@ -31,6 +31,9 @@ INPUT(
 ./debug\pianowidget.o
 ./debug\frame.o
 ./debug\motordemonstrate.o
+./debug\expcode.o
+./debug\expknowledge.o
+./debug\expprinciple.o
 ./debug\qrc_images.o
 ./debug\moc_mainwindow.o
 ./debug\moc_mainwidget.o
@@ -59,4 +62,7 @@ INPUT(
 ./debug\moc_mylabel.o
 ./debug\moc_pianowidget.o
 ./debug\moc_motordemonstrate.o
+./debug\moc_expcode.o
+./debug\moc_expknowledge.o
+./debug\moc_expprinciple.o
 );

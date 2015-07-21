@@ -54,6 +54,9 @@
 #include "grapwidget.h"
 #include "rfidsimulation.h"
 #include "buzzersimulator.h"
+#include "expcode.h"
+#include "expprinciple.h"
+#include "expknowledge.h"
 
 class FileUtils;
 
@@ -78,17 +81,20 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
         case 0:
             switch(recordId){
             case 0:
-
+                code = new expCode(0);
+                code->show();
                 break;
             case 1:
                 grapLed = new grapWidget(0);
                 grapLed->show();
                 break;
             case 2:
-
+                knowledge = new expKnowledge(0);
+                knowledge->show();
                 break;
             case 3:
-
+                principle = new expPrinciple(0);
+                principle->show();
                 break;
             case 4:
                 leds = new ledsimulation;
@@ -100,17 +106,20 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
         case 1:
             switch(recordId){
             case 0:
-
+                code = new expCode(1);
+                code->show();
                 break;
             case 1:
                 grapLed = new grapWidget(1);
                 grapLed->show();
                 break;
             case 2:
-
+                knowledge = new expKnowledge(1);
+                knowledge->show();
                 break;
             case 3:
-
+                principle = new expPrinciple(1);
+                principle->show();
                 break;
             case 4:
                 timers = new timersimalation;
@@ -122,17 +131,20 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
         case 2:
             switch(recordId){
             case 0:
-
+                code = new expCode(2);
+                code->show();
                 break;
             case 1:
                 grapLed = new grapWidget(2);
                 grapLed->show();
                 break;
             case 2:
-
+                knowledge = new expKnowledge(2);
+                knowledge->show();
                 break;
             case 3:
-
+                principle = new expPrinciple(2);
+                principle->show();
                 break;
             case 4:
                 temp = new TemperatureMainWindow;
@@ -144,17 +156,20 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
         case 3:
             switch(recordId){
             case 0:
-
+                code = new expCode(3);
+                code->show();
                 break;
             case 1:
                 grapLed = new grapWidget(3);
                 grapLed->show();
                 break;
             case 2:
-
+                knowledge = new expKnowledge(3);
+                knowledge->show();
                 break;
             case 3:
-
+                principle = new expPrinciple(3);
+                principle->show();
                 break;
             case 4:
                 humi = new HumidityWindow;
@@ -166,17 +181,20 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
         case 4:
             switch(recordId){
             case 0:
-
+                code = new expCode(4);
+                code->show();
                 break;
             case 1:
                 grapLed = new grapWidget(4);
                 grapLed->show();
                 break;
             case 2:
-
+                knowledge = new expKnowledge(4);
+                knowledge->show();
                 break;
             case 3:
-
+                principle = new expPrinciple(4);
+                principle->show();
                 break;
             case 4:
                 shake = new ShakeSimulator;
@@ -188,17 +206,20 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
         case 5:
             switch(recordId){
             case 0:
-
+                code = new expCode(5);
+                code->show();
                 break;
             case 1:
                 grapLed = new grapWidget(5);
                 grapLed->show();
                 break;
             case 2:
-
+                knowledge = new expKnowledge(5);
+                knowledge->show();
                 break;
             case 3:
-
+                principle = new expPrinciple(5);
+                principle->show();
                 break;
             case 4:
                 rfid = new RFIDsimulation;
@@ -210,17 +231,20 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
         case 6:
             switch(recordId){
             case 0:
-
+                code = new expCode(6);
+                code->show();
                 break;
             case 1:
                 grapLed = new grapWidget(6);
                 grapLed->show();
                 break;
             case 2:
-
+                knowledge = new expKnowledge(6);
+                knowledge->show();
                 break;
             case 3:
-
+                principle = new expPrinciple(6);
+                principle->show();
                 break;
             case 4:
                 port =  new portsimulation;
@@ -232,17 +256,20 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
         case 7:
             switch(recordId){
             case 0:
-
+                code = new expCode(7);
+                code->show();
                 break;
             case 1:
                 grapLed = new grapWidget(7);
                 grapLed->show();
                 break;
             case 2:
-
+                knowledge = new expKnowledge(7);
+                knowledge->show();
                 break;
             case 3:
-
+                principle = new expPrinciple(7);
+                principle->show();
                 break;
             case 4:
                 motor = new MotorDemonstrate;
@@ -254,17 +281,20 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
         case 8:
             switch(recordId){
             case 0:
-
+                code = new expCode(8);
+                code->show();
                 break;
             case 1:
                 grapLed = new grapWidget(8);
                 grapLed->show();
                 break;
             case 2:
-
+                knowledge = new expKnowledge(8);
+                knowledge->show();
                 break;
             case 3:
-
+                principle = new expPrinciple(8);
+                principle->show();
                 break;
             case 4:
                 light = new lightDemonstrate;
@@ -276,17 +306,20 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
         case 9:
             switch(recordId){
             case 0:
-
+                code = new expCode(9);
+                code->show();
                 break;
             case 1:
                 grapLed = new grapWidget(9);
                 grapLed->show();
                 break;
             case 2:
-
+                knowledge = new expKnowledge(9);
+                knowledge->show();
                 break;
             case 3:
-
+                principle = new expPrinciple(9);
+                principle->show();
                 break;
             case 4:
                 lcds = new lcdsimlation;
@@ -298,17 +331,20 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
         case 10:
             switch(recordId){
             case 0:
-
+                code = new expCode(10);
+                code->show();
                 break;
             case 1:
                 grapLed = new grapWidget(10);
                 grapLed->show();
                 break;
             case 2:
-
+                knowledge = new expKnowledge(10);
+                knowledge->show();
                 break;
             case 3:
-
+                principle = new expPrinciple(10);
+                principle->show();
                 break;
             case 4:
                 inter=new interinstruction;
@@ -320,17 +356,20 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
         case 11:
             switch(recordId){
             case 0:
-
+                code = new expCode(11);
+                code->show();
                 break;
             case 1:
                 grapLed = new grapWidget(11);
                 grapLed->show();
                 break;
             case 2:
-
+                knowledge = new expKnowledge(11);
+                knowledge->show();
                 break;
             case 3:
-
+                principle = new expPrinciple(11);
+                principle->show();
                 break;
             case 4:
                 infarred=new infarredsimulation;
@@ -342,17 +381,20 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
         case 12:
             switch(recordId){
             case 0:
-
+                code = new expCode(12);
+                code->show();
                 break;
             case 1:
                 grapLed = new grapWidget(12);
                 grapLed->show();
                 break;
             case 2:
-
+                knowledge = new expKnowledge(12);
+                knowledge->show();
                 break;
             case 3:
-
+                principle = new expPrinciple(12);
+                principle->show();
                 break;
             case 4:
                 buttonD=new buttonDemonstrate;
@@ -364,17 +406,20 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
         case 13:
             switch(recordId){
             case 0:
-
+                code = new expCode(13);
+                code->show();
                 break;
             case 1:
                 grapLed = new grapWidget(13);
                 grapLed->show();
                 break;
             case 2:
-
+                knowledge = new expKnowledge(13);
+                knowledge->show();
                 break;
             case 3:
-
+                principle = new expPrinciple(13);
+                principle->show();
                 break;
             case 4:
                 buzzer = new BuzzerSimulator;
@@ -386,17 +431,20 @@ void Item::mousePressEvent (QGraphicsSceneMouseEvent *event)
         case 14:
             switch(recordId){
             case 0:
-
+                code = new expCode(14);
+                code->show();
                 break;
             case 1:
                 grapLed = new grapWidget(14);
                 grapLed->show();
                 break;
             case 2:
-
+                knowledge = new expKnowledge(14);
+                knowledge->show();
                 break;
             case 3:
-
+                principle = new expPrinciple(14);
+                principle->show();
                 break;
             case 4:
 
