@@ -35,46 +35,47 @@ expKnowledge::expKnowledge(int expKnowNum,QWidget *parent) :
     stream.setCodec(code);
     switch(expKnowNum){
     case 0:
-        file.setFileName("E:/briup_text/LEDPrinciple.txt");
+        //E:\briup_text\knowledge
+        file.setFileName("E:/briup_text/knowledge/LEDKnowledge.txt");
         break;
     case 1:
-        file.setFileName("E:/briup_text/timerKnowledge.txt");
+        file.setFileName("E:/briup_text/knowledge/timerKnowledge.txt");
         break;
     case 2:
-        file.setFileName("E:/briup_text/temKnowledge.txt");
+        file.setFileName("E:/briup_text/knowledge/temKnowledge.txt");
         break;
     case 3:
-        file.setFileName("E:/briup_text/temhumKnowledge.txt");
+        file.setFileName("E:/briup_text/knowledge/temhumKnowledge.txt");
         break;
     case 4:
-        file.setFileName("E:/briup_text/shockKnowledge.txt");
+        file.setFileName("E:/briup_text/knowledge/shockKnowledge.txt");
         break;
     case 5:
-        file.setFileName("E:/briup_text/RFIDKnowledge.txt");
+        file.setFileName("E:/briup_text/knowledge/RFIDKnowledge.txt");
         break;
     case 6:
-        file.setFileName("E:/briup_text/portKnowledge.txt");
+        file.setFileName("E:/briup_text/knowledge/portKnowledge.txt");
         break;
     case 7:
-        file.setFileName("E:/briup_text/motorKnowledge.txt");
+        file.setFileName("E:/briup_text/knowledge/motorKnowledge.txt");
         break;
     case 8:
-        file.setFileName("E:/briup_text/lightKnowledge.txt");
+        file.setFileName("E:/briup_text/knowledge/lightKnowledge.txt");
         break;
     case 9:
-        file.setFileName("E:/briup_text/LCDKnowledge.txt");
+        file.setFileName("E:/briup_text/knowledge/LCDKnowledge.txt");
         break;
     case 10:
-        file.setFileName("E:/briup_text/interruptKnowledge.txt");
+        file.setFileName("E:/briup_text/knowledge/interruptKnowledge.txt");
         break;
     case 11:
-        file.setFileName("E:/briup_text/infraredKnowledge.txt");
+        file.setFileName("E:/briup_text/knowledge/infraredKnowledge.txt");
         break;
     case 12:
-        file.setFileName("E:/briup_text/enterKnowledge.txt");
+        file.setFileName("E:/briup_text/knowledge/enterKnowledge.txt");
         break;
     case 13:
-        file.setFileName("E:/briup_text/buzzerKnoeledge.txt");
+        file.setFileName("E:/briup_text/knowledge/buzzerKnoeledge.txt");
         break;
     }
     file.open(QIODevice::ReadOnly|QIODevice::Text);
