@@ -20,7 +20,7 @@ public:
 protected:
     void mousePressEvent(QMouseEvent *e);
     //void mouseMoveEvent(QMouseEvent *);
-   // void    paintEvent(QPaintEvent* e);
+    void paintEvent(QPaintEvent* e);
 private slots:
      void readSlot();
      void judgeSlot();

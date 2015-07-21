@@ -134,7 +134,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="images.qrc">:/images/backgroundMusic.png</pixmap>
+    <pixmap resource="images.qrc">:/images/musicbackground2.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -159,12 +159,12 @@
    </property>
    <item>
     <property name="text">
-     <string>生日快乐歌</string>
+     <string>两只老虎</string>
     </property>
    </item>
    <item>
     <property name="text">
-     <string>两只老虎</string>
+     <string>生日快乐歌</string>
     </property>
    </item>
   </widget>

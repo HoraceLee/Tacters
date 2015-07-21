@@ -6,6 +6,7 @@
 #include <pianowidget.h>
 #include <musicwidget.h>
 #include <qstackedlayout.h>
+#include <QPaintEvent>
 
 namespace Ui {
 class BuzzerSimulator;
@@ -18,6 +19,9 @@ class BuzzerSimulator : public QWidget
 public:
     explicit BuzzerSimulator(QWidget *parent = 0);
     ~BuzzerSimulator();
+
+protected:
+    void paintEvent(QPaintEvent *event);
 
 private slots:
     void on_pianoBtn_clicked();

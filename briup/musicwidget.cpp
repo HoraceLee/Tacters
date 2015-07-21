@@ -2,6 +2,7 @@
 #include "ui_musicwidget.h"
 #include <QSerialPortInfo>
 #include "frame.h"
+#include <QDebug>
 
 musicwidget::musicwidget(QWidget *parent) :
     QWidget(parent),
@@ -63,15 +64,21 @@ void musicwidget::on_stopBtn_clicked()
     serialport->write(send);
 }
 void musicwidget::closeport(){
+    qDebug()<<"void musicwidget::closeport(){"<<endl;
     if(serialport == NULL){
+        qDebug()<<"serialport == NULL"<<endl;
         return;
     }
+    qDebug()<<"1"<<endl;
     if(!serialport->isOpen()){
+        qDebug()<<"!serialport->isOpen()"<<endl;
         serialport = NULL;
         return;
     }
+    qDebug()<<"1"<<endl;
     serialport->close();
     serialport = NULL;
+    qDebug()<<"2"<<endl;
 }
 
 

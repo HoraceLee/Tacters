@@ -14,7 +14,7 @@
    <string>Briup教学</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="images.qrc">
+   <iconset>
     <normaloff>:/images/windowsIcon.png</normaloff>:/images/windowsIcon.png</iconset>
   </property>
   <property name="iconSize">
@@ -32,6 +32,9 @@
       <width>1000</width>
       <height>618</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/images/backGround2.jpg);</string>
     </property>
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">

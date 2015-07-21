@@ -26,7 +26,7 @@ Widget::Widget(int id,QWidget *parent) :
     setWindowFlags(Qt::FramelessWindowHint);
     ui->setupUi(this);
     moduleid=id;
-    background.load(":/images/backGround2.png");
+//    background.load(":/images/backGround2.jpg");
     QBitmap objBitmap(size());
     //QPainter用于在位图上绘画
     QPainter painter(&objBitmap);

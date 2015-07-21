@@ -156,20 +156,19 @@ void TemperatureMainWindow::readSlot(){
     double tempvalue=order[0]+afterpoint;
     qDebug()<<tempvalue;
     int minutes = FileUtils::calMinute(QDateTime::currentDateTime());
-
     TemperatureMainWindow::addTempDataAndShow(minutes,tempvalue);
+    // 新加，目的是为了plot动态刷新
+    ui->plot->repaint();
 }
 
 void TemperatureMainWindow::paintEvent(QPaintEvent *){
     QPainter painter(this);
     //消除抖动
     painter.setRenderHint(QPainter::Antialiasing);
-    QPixmap back;
-    back.load(":/images/temp_background.jpg");
-    QBrush brush = QBrush(back);
-    painter.setBackground(brush);
+    QPixmap p(":/images/back_all.jpg");
     QPixmap tempPixmap;
     tempPixmap.load(":/images/tem.png");
+    painter.drawPixmap(0,0,1000,618,p);
     painter.drawPixmap(10,25,350,550,tempPixmap);
     TemperatureMainWindow::showTemp(temperature);
 }

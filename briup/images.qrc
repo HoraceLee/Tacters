@@ -1,14 +1,10 @@
 <RCC>
     <qresource prefix="/">
-        <file>images/backGround2.png</file>
         <file>images/LEDoff.png</file>
         <file>images/LEDon.png</file>
-        <file>images/background.jpg</file>
         <file>images/timericon.png</file>
         <file>images/audioLabel.png</file>
         <file>images/enterLabel.png</file>
-        <file>images/infarredLabel.png</file>
-        <file>images/interruptLabel.png</file>
         <file>images/LCDLabel.png</file>
         <file>images/LEDLabel.png</file>
         <file>images/lightLabel.png</file>
@@ -67,7 +63,6 @@
         <file>images/6.png</file>
         <file>images/7.png</file>
         <file>images/audio.png</file>
-        <file>images/backgroundMusic.png</file>
         <file>images/music.png</file>
         <file>images/music2.png</file>
         <file>images/musicContinueBtn.png</file>
@@ -99,5 +94,13 @@
         <file>images/page_hashtag.png</file>
         <file>images/waterwear.gif</file>
         <file>images/startBtn.png</file>
+        <file>images/backGround2.jpg</file>
+        <file>images/infarredLabel.png</file>
+        <file>images/interruptLabel.png</file>
+        <file>images/back_2.jpg</file>
+        <file>images/back_5.jpg</file>
+        <file>images/back_book.jpg</file>
+        <file>images/back_all.jpg</file>
+        <file>images/musicbackground2.jpg</file>
     </qresource>
 </RCC>

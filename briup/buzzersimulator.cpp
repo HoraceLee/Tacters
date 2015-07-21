@@ -2,6 +2,8 @@
 #include "ui_buzzersimulator.h"
 #include <QBitmap>
 #include <QPainter>
+#include <QPaintEvent>
+
 BuzzerSimulator::BuzzerSimulator(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::BuzzerSimulator)
@@ -38,6 +40,10 @@ void BuzzerSimulator::on_pianoBtn_clicked()
 {
     qDebug()<<"on_pianoBtn_clicked()"<<endl;
     layout->setCurrentIndex(0);
+    if(musicWidget == NULL){
+        qDebug()<<"musicWidget == NULL"<<endl;
+    }
+    qDebug()<<"on_pianoBtn_clicked()完了"<<endl;
     musicWidget->closeport();//关闭串口
     qDebug()<<"musicWidget->closeport();//关闭串口"<<endl;
     pianoWidget->open();
@@ -57,4 +63,10 @@ void BuzzerSimulator::on_closeBtn_clicked()
     this->close();
     musicWidget->closeport();
     pianoWidget->closeport();
+}
+
+void BuzzerSimulator::paintEvent(QPaintEvent *event){
+    QPainter pa(this);
+    QPixmap p(":/images/back_all.jpg");
+    pa.drawPixmap(0,0,1000,618,p);
 }

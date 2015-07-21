@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QSerialPort>
 #include <QTimer>
+#include <QPaintEvent>
 
 namespace Ui {
 class buttonDemonstrate;
@@ -18,9 +19,11 @@ public:
     explicit buttonDemonstrate(QWidget *parent = 0);
     ~buttonDemonstrate();
 
+protected:
+    void paintEvent(QPaintEvent *event);
+
 private slots:
     void readSlot();
-
     void on_pushButton_clicked();
 
 private:

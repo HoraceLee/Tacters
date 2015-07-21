@@ -97,8 +97,8 @@ HumidityWindow::HumidityWindow(QWidget *parent) :
     readTimer.start(200);//每隔200ms
     qDebug()<<"--------------";
 }
-  connect(&readTimer,SIGNAL(timeout()),this,SLOT(readSlot()));
-  connect(&readTimer,SIGNAL(timeout()),this,SLOT(repaint()));
+    connect(&readTimer,SIGNAL(timeout()),this,SLOT(readSlot()));
+    connect(&readTimer,SIGNAL(timeout()),this,SLOT(repaint()));
 
 
 //    connect(this,SIGNAL(addDataAndShow()),this,SLOT(paintEvent()));
@@ -133,7 +133,8 @@ void HumidityWindow::readSlot()
 
     int minutes = FileUtils::calMinute(QDateTime::currentDateTime());
     HumidityWindow::addDataAndShow(minutes,order[0],order[1]);
-
+    // 新加，目的是为了plot动态刷新
+    ui->plot->repaint();
 }
 
 void HumidityWindow::setupPlot()

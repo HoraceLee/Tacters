@@ -107,6 +107,8 @@ void MotorDemonstrate::readSlot(){
 
 void MotorDemonstrate::paintEvent(QPaintEvent *e){
     QPainter paint(this);
+    QPixmap p(":/images/back_all.jpg");
+    paint.drawPixmap(0,0,1000,618,p);
     if(roMode == 0 || roMode == 1){
         if(roMode == 0){
             i -= 0.5;
@@ -116,7 +118,6 @@ void MotorDemonstrate::paintEvent(QPaintEvent *e){
             i += 0.5;
             ui->currentRoMode->setText("当前旋转方式为：反转");
         }
-
     }else if(roMode == 2){
         tempAngle = roAngle;
         if(roDirection == 0){
@@ -214,6 +215,6 @@ void MotorDemonstrate::on_pushButton_clicked()
     }
     readTimer.stop();
     serialport->close();
-    serialport==NULL;
+    serialport == NULL;
     this->close();
 }

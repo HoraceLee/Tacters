@@ -7,6 +7,7 @@
 #include <qserialportinfo.h>
 #include <QBitmap>
 #include <QPainter>
+#include <QPaintEvent>
 #include "frame.h"
 
 int reciver;
@@ -179,13 +180,16 @@ void buttonDemonstrate::readSlot()
     }
 }
 
-
-
-
 void buttonDemonstrate::on_pushButton_clicked()
 {
     readTimer.stop();
     serialport->close();
     serialport = NULL;
     this->close();
+}
+
+void buttonDemonstrate::paintEvent(QPaintEvent *event){
+    QPainter pa(this);
+    QPixmap p(":/images/back_all.jpg");
+    pa.drawPixmap(0,0,1000,618,p);
 }

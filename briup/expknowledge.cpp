@@ -7,6 +7,8 @@
 #include <qtextcodec.h>
 #include <QBitmap>
 #include <QPainter>
+#include <QPixmap>
+#include <QPaintEvent>
 
 expKnowledge::expKnowledge(int expKnowNum,QWidget *parent) :
     QWidget(parent),
@@ -16,16 +18,23 @@ expKnowledge::expKnowledge(int expKnowNum,QWidget *parent) :
     ui->expKnowLabel->setWordWrap(true);
     ui->expKnowLabel->setAlignment(Qt::AlignTop);
 
+
+
     //生成一张位图
     QBitmap objBitmap(size());
     //QPainter用于在位图上绘画
     QPainter painter(&objBitmap);
-    //填充位图矩形框(用白色填充)
+
+//    background.load(":/images/back_book.jpg");
+//    pixmap = new QPixmap(":/images/back_2.jpg");
+//    painter.drawPixmap(0,0,1000,618,*pixmap);
+
+//    填充位图矩形框(用白色填充)
     painter.fillRect(rect(),Qt::white);
     painter.setBrush(QColor(0,0,0));
-    //在位图上画圆角矩形(用黑色填充)
+//    在位图上画圆角矩形(用黑色填充)
     painter.drawRoundedRect(this->rect(),10,10);
-    //使用setmask过滤即可
+//    使用setmask过滤即可
     setMask(objBitmap);
 
     QFile file;
@@ -99,4 +108,10 @@ expKnowledge::~expKnowledge()
 void expKnowledge::on_closeBtn_clicked()
 {
     this->close();
+}
+
+void expKnowledge::paintEvent(QPaintEvent *event){
+    QPainter pa(this);
+    QPixmap p(":/images/back_book.jpg");
+    pa.drawPixmap(0,0,1000,618,p);
 }

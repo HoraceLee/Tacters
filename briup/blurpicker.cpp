@@ -16,7 +16,7 @@
 
 BlurPicker::BlurPicker(QWidget *parent): QGraphicsView(parent), m_index(0.0), m_animation(this, "index")
 {
-    setBackgroundBrush(QPixmap(":/images/background.jpg"));
+//    setBackgroundBrush(QPixmap(":/images/backGround2.jpg"));
     setScene(new QGraphicsScene(this));
 
     setupScene();
@@ -44,8 +44,8 @@ void BlurPicker::setIndex(qreal index)
     for (int i = 0; i < m_icons.count(); ++i) {
         ImageItem *icon = m_icons[i];
         qreal a = ((i + m_index) * 2 * M_PI) / m_icons.count();
-        qreal xs = 350 * qSin(a);
-        qreal ys = 250 * qCos(a);
+        qreal xs = 380 * qSin(a);
+        qreal ys = 230 * qCos(a);
         QPointF pos(xs, ys);
        // pos = QTransform::scale(0,0.2).map(pos);
 //        pos = QTransform().rotate(-20).map(pos);

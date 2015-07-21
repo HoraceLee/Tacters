@@ -183,3 +183,9 @@ return;
     serialport->close();
     serialport = NULL;
 }
+void portsimulation::paintEvent(QPaintEvent *e)
+{
+    QPainter paint(this);
+    QPixmap p(":/images/back_all.jpg");
+    paint.drawPixmap(0,0,1000,618,p);
+}

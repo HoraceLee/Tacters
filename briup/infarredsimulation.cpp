@@ -95,7 +95,7 @@ void infarredsimulation::readSlot()
 
 void infarredsimulation::paintEvent(QPaintEvent *e)
 {
-    QPainter  painter(this);
+    QPainter painter(this);
     QPixmap pixmap(":/images/redbackground.png");
     painter.drawPixmap(0,0,this->width(),this->height(),pixmap);
 }

@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QSerialPort>
 #include <QTimer>
+#include <QPaintEvent>
 
 namespace Ui {
 class timersimalation;

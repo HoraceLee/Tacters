@@ -15,6 +15,9 @@ public:
     expPrinciple(int expPrinNum = 0,QWidget *parent = 0);
     ~expPrinciple();
 
+protected:
+    void paintEvent(QPaintEvent *event);
+
 private slots:
     void on_closeBtn_clicked();
 

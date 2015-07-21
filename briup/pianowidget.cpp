@@ -189,8 +189,10 @@ void pianowidget::closeport(){
         serialport = NULL;
         return;
     }
-    serialport->close();
-    serialport = NULL;
+    if(serialport->isOpen()){
+        serialport->close();
+        serialport = NULL;
+    }
 }
 
 void pianowidget::open(){
@@ -211,7 +213,7 @@ void pianowidget::open(){
     //设置设备号
         foreach (const QSerialPortInfo &info, QSerialPortInfo::availablePorts())
         {
-        serialport->setPortName(info.portName());
+            serialport->setPortName(info.portName());
         }
         serialport->open(QIODevice::ReadWrite);
         serialport->setBaudRate(9600);

@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QSerialPort>
 #include <QTimer>
+#include <QPaintEvent>
 
 namespace Ui {
 class portsimulation;
@@ -23,7 +24,7 @@ private slots:
     void portDisplay();
     void portInit();
     void readSlot();
-
+    void paintEvent(QPaintEvent *e);
     void on_pushButton_clicked();
 
 private:

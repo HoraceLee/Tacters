@@ -344,3 +344,9 @@ void ledsimulation::on_closeBtn_clicked()
 
     this->close();
 }
+
+void ledsimulation::paintEvent(QPaintEvent *event){
+    QPainter pa(this);
+    QPixmap p(":/images/back_all.jpg");
+    pa.drawPixmap(0,0,1000,618,p);
+}

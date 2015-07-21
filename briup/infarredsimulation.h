@@ -6,8 +6,7 @@
 #include <QSerialPort>
 #include <QTimer>
 #include <QPixmap>
-
-
+#include <QPaintEvent>
 
 namespace Ui {
 class infarredsimulation;

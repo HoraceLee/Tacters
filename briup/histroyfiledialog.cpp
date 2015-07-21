@@ -27,7 +27,7 @@ void HistroyFileDialog::on_submitBtn_clicked()
     QString fileName;
     switch(FileUtils::DIALOG_MODE){
     case 0x01:
-        fileName = "E:\\HistoryData\\" + dateStr +".txt";
+        fileName = "E:\\HistoryTempData\\" + dateStr +".txt";
         if(!FileUtils::openFile(fileName))
         {
             QMessageBox::warning(this,"文件打开错误","没有该数据文件！",QMessageBox::Yes);
@@ -39,7 +39,7 @@ void HistroyFileDialog::on_submitBtn_clicked()
         this->close();
         break;
     case 0x02:
-        fileName = "E:\\HistoryAndHumiData\\" + dateStr +".txt";
+        fileName = "E:\\HistoryTempAndHumiData\\" + dateStr +".txt";
         if(!FileUtils::openFile(fileName))
         {
             QMessageBox::warning(this,"文件打开错误","没有该数据文件！",QMessageBox::Yes);
@@ -51,8 +51,6 @@ void HistroyFileDialog::on_submitBtn_clicked()
         this->close();
         break;
     }
-
-
 }
 
 void HistroyFileDialog::on_cancelBtn_clicked()

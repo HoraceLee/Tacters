@@ -30,8 +30,11 @@
      <height>618</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">background-image: url(:/images/back_5.jpg);</string>
    </property>
    <widget class="QPushButton" name="closeBtn">
     <property name="geometry">

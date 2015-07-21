@@ -89,8 +89,15 @@ void RFIDsimulation::readSlot(){
 
 void RFIDsimulation::on_closeBtn_clicked()
 {
-    this->close();
+    if(this->serialport==NULL){
+        return ;
+    }
+    if(!this->serialport->isOpen()){
+        serialport = NULL;
+        return;
+    }
     readTimer.stop();
     serialport->close();
     serialport = NULL;
+    this->close();
 }

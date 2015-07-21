@@ -7,6 +7,7 @@
 #include <qtextcodec.h>
 #include <QBitmap>
 #include <QPainter>
+#include <QPaintEvent>
 
 expPrinciple::expPrinciple(int expPrinNum,QWidget *parent) :
     QWidget(parent),
@@ -98,4 +99,10 @@ expPrinciple::~expPrinciple()
 void expPrinciple::on_closeBtn_clicked()
 {
     this->close();
+}
+
+void expPrinciple::paintEvent(QPaintEvent *event){
+    QPainter pa(this);
+    QPixmap p(":/images/back_book.jpg");
+    pa.drawPixmap(0,0,1000,618,p);
 }

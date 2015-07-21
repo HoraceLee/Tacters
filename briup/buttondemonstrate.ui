@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>buttonDemonstrate</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QLabel" name="pageCover">
    <property name="geometry">
     <rect>
