@@ -16,6 +16,7 @@ public:
     explicit musicwidget(QWidget *parent = 0);
     ~musicwidget();
     void closeport();
+    void open();
 
 private slots:
     void on_comboBox_currentIndexChanged(int index);

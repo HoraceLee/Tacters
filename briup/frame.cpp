@@ -25,7 +25,7 @@ bool isFrame(QByteArray data,unsigned char header,int length){
  *
  * @brief isCommand 判断不固定协议帧长度的返回协议帧
  * @param data
- * @param haeder
+ * @param header
  * @return
  */
 bool isFrame(QByteArray data, unsigned char header){\

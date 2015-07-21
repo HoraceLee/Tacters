@@ -36,7 +36,9 @@ private slots:
     void on_humi_SourceFile_triggered();
     void on_humi_ShowInPlot_triggered();
 
-    void readSolt();
+    void readSlot();
+
+    void on_closeBtn_clicked();
 
 private:
     Ui::HumidityWindow *ui;
@@ -50,7 +52,7 @@ private:
     QSerialPort*  serialport;
     QTimer      readTimer;
     bool        isPortOpen;
-    char*            order;
+    char            order[2];
 
 signals:
     addDataAndShow();

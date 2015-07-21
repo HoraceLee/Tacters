@@ -8,6 +8,7 @@
 #include <qserialportinfo.h>
 #include <QTimer>
 #include "frame.h"
+#include <QDebug>
 
 infarredsimulation::infarredsimulation(QWidget *parent) :
     QWidget(parent),
@@ -15,9 +16,9 @@ infarredsimulation::infarredsimulation(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowFlags(Qt::FramelessWindowHint);
-    movie =new QMovie(":/red.gif");
+    movie =new QMovie(":/images/red.gif");
     ui->label->setMovie(movie);
-    people=new QPixmap(":/people.png");
+//    people=new QPixmap(":/people.png");
     //movie->start();
     //生成一张位图
     QBitmap objBitmap(size());
@@ -74,20 +75,21 @@ void infarredsimulation::readSlot()
 {
     QByteArray data;
     data=this->serialport->readAll();//接受数据
+    qDebug()<<data.toHex();
+
     if(!isFrame(data,0x09,3)){
         return;
     }
     if(data.isEmpty()){
        return;
     }
+
     order=(unsigned char)data.at(1);
-    if(order==1){
-        QPixmap people(":/people.png");
-        ui->label_2->setPixmap(people);
-        movie->start();
-    }else{
-        movie->stop();
-        ui->label_2->clear();
+    qDebug()<<order+0x30;
+    if(order==0){
+        addPeople();
+    }else if(order ==1){
+        removePeople();
     }
 }
 
@@ -100,6 +102,23 @@ void infarredsimulation::paintEvent(QPaintEvent *e)
 
 void infarredsimulation::on_closeBtn_clicked()
 {
+    if(serialport==NULL){
+        return;
+    }
+    readTimer.stop();
     serialport->close();
+    serialport = NULL;
     this->close();
 }
+void infarredsimulation::addPeople(){
+    qDebug()<<"-------------";
+    QPixmap people(":/images/people.png");
+    ui->label_2->setPixmap(people);
+    movie->start();
+}
+
+void infarredsimulation::removePeople(){
+    movie->stop();
+    ui->label_2->clear();
+}
+

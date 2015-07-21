@@ -20,7 +20,7 @@ public:
 protected:
     void mousePressEvent(QMouseEvent *e);
 private slots:
-    void portDisplay(QString s);
+    void portDisplay();
     void portInit();
     void readSlot();
 
@@ -31,7 +31,6 @@ private:
     QTimer       readTimer;
     QSerialPort* serialport;
     bool         isPortOpen;
-    char*           order;
 
 };
 

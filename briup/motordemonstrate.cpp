@@ -33,8 +33,9 @@ MotorDemonstrate::MotorDemonstrate(QWidget *parent) :
     time->start(2);
 
     connect(time,SIGNAL(timeout()),this,SLOT(update()));
-    connect(ui->ok_Btn,SIGNAL(readSlot()),this,SLOT(update()));
-
+    //////////////////////////////////////////////////////////////////////////////////
+    connect(ui->ok_Btn,SIGNAL(on_pushButton_clicked()),this,SLOT(readSlot()));
+    //////////////////////////////////////////////////////////////////////////////////
     QString string;
     string = "   本界面为步进电机实验演示界面。\n";
     string = string + "   在演示前先选择旋转方式，有正转、反转、自定义角度旋转三种方式，";
@@ -93,6 +94,7 @@ MotorDemonstrate::~MotorDemonstrate()
 void MotorDemonstrate::readSlot(){
     QByteArray data;
     data=this->serialport->readAll();//接受数据
+    qDebug()<<data.toHex();
     if(!isFrame(data,0x11,3)){
         return;
     }
@@ -174,70 +176,56 @@ void MotorDemonstrate::on_ok_Btn_clicked()
 
     if(roMode == 0)
     {
-        char writeorder[4];
-        writeorder[0]=0x11;
-        writeorder[1]=0x10;
-        writeorder[2]=0x00;
-        writeorder[3]=0xff;
+        char writeorder[3] = {0x11,0x01,0xff};
+//        writeorder[0]=0x11;
+//        writeorder[1]=0x10;
+//        writeorder[2]=0x00;/
+//        writeorder[3]=0xff;
+
+//        char send[2]={0x11,0xff};
+//        serialport->write(send);
         serialport->write(writeorder);
+        qDebug()<<"11111111111";
     }
     else if(roMode == 1){
-        char writeorder2[4];
-        writeorder2[0]=0x11;
-        writeorder2[1]=0x20;
-        writeorder2[2]=0x00;
-        writeorder2[3]=0xff;
+        char writeorder2[] = {0x11,0x02,0xff};
+        qDebug()<<"22222222222222222";
         serialport->write(writeorder2);
     }else if(roMode == 2){
-          char writeorder3[6];
+          char writeorder3[4];
         if(roDirection == 0){          
-            if(roAngle<16){
+            if(roAngle<256){
                 writeorder3[0]=0x11;
                 writeorder3[1]=0x10;
-                writeorder3[2]=0x0;
-                writeorder3[3]=roAngle;
-                writeorder3[4]=0xff;
-            }else if(roAngle<256){
+                writeorder3[2]=roAngle;
+                writeorder3[3]=0xff;
+            }else if(roAngle<256*16){
                 writeorder3[0]=0x11;
-                writeorder3[1]=0x10;
-                writeorder3[2]=roAngle/16;
-                writeorder3[3]=roAngle%16;
-                writeorder3[4]=0xff;
-            }else {
-                writeorder3[0]=0x11;
-                writeorder3[1]=0x1;
-                writeorder3[2]=roAngle/256;
-                int roAngle2=roAngle%256;
-                writeorder3[3]=roAngle2/16;
-                writeorder3[4]=roAngle2%16;
-                writeorder3[5]=0xff;
+                writeorder3[1]=0x10+(roAngle/256)%16;
+                writeorder3[2]=roAngle;
+                writeorder3[3]=0xff;
+            }else{
+                return;
             }
             roAngle = -roAngle;
+            qDebug()<<"33333333333333333";
             serialport->write(writeorder3);
         }
-        else if(roDirection == 1)
-            {
-            if(roAngle<16){
+        else if(roDirection == 1){
+            if(roAngle<256){
                 writeorder3[0]=0x11;
                 writeorder3[1]=0x20;
-                writeorder3[2]=0x0;
-                writeorder3[3]=roAngle;
-                writeorder3[4]=0xff;
-            }else if(roAngle<256){
+                writeorder3[2]=roAngle;
+                writeorder3[3]=0xff;
+            }else if(roAngle<156*16){
                 writeorder3[0]=0x11;
-                writeorder3[1]=0x20;
-                writeorder3[2]=roAngle/16;
-                writeorder3[3]=roAngle%16;
-                writeorder3[4]=0xff;
-            }else {
-                writeorder3[0]=0x11;
-                writeorder3[1]=0x2;
-                writeorder3[2]=roAngle/256;
-                int roAngle2=roAngle%256;
-                writeorder3[3]=roAngle2/16;
-                writeorder3[4]=roAngle2%16;
-                writeorder3[5]=0xff;
+                writeorder3[1]=0x20+(roAngle/256)%16;
+                writeorder3[2]=roAngle;
+                writeorder3[3]=0xff;
+            }else{
+                return;
             }
+            qDebug()<<"44444444444444444444";
             serialport->write(writeorder3);
            }
         }
@@ -252,5 +240,7 @@ void MotorDemonstrate::on_ok_Btn_clicked()
 void MotorDemonstrate::on_pushButton_clicked()
 {
     this->close();
-    this->serialport->close();
+    readTimer.stop();
+    serialport->close();
+    serialport = NULL;
 }

@@ -28,6 +28,7 @@ private:
     QTimer          readTimer;
     unsigned char       order;
     bool           isPortOpen;
+    char            lastState;
 };
 
 #endif // LIGHTDEMONSTRATE_H

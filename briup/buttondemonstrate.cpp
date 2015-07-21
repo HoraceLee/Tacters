@@ -184,6 +184,8 @@ void buttonDemonstrate::readSlot()
 
 void buttonDemonstrate::on_pushButton_clicked()
 {
+    readTimer.stop();
     serialport->close();
+    serialport = NULL;
     this->close();
 }

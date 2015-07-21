@@ -9,6 +9,7 @@
 #include <QBitmap>
 #include <QPainter>
 #include "frame.h"
+#include <QDebug>
 
 portsimulation::portsimulation(QWidget *parent) :
     QWidget(parent),
@@ -71,22 +72,36 @@ portsimulation::~portsimulation()
 void portsimulation::readSlot(){
     QByteArray data;
     data=this->serialport->readAll();//接受数据
+    qDebug()<<data.toHex();
     if(!isFrame(data,0x04)){
         return;
     }
     if(data.isEmpty()){
        return;
     }
-    for(int i=2;i<data.length();i++)
-    {
-        order[i]=(char)data.at(i);
+    if(data.length()<4){
+        return ;
     }
+    char order[data.length()-2];
+    qDebug()<<"================";
+    for(int i=2;i<data.length()-1;i++)
+    {
+        order[i-2]=(char)data.at(i);
+    }
+    order[data.length()-3] = 0;
+    qDebug()<<order;
     QString str=QString(QLatin1String(order));
-    QMovie *movie = new QMovie(":/images/shock.gif");
+    qDebug()<<"str:::::::"<<str<<endl;
+    QMovie *movie = new QMovie(":/images/shock.gif"); //ui->screen->setText(str);
     ui->label_2->setMovie(movie);
     ui->label_2->movie()->start();
+    ui->title->setText("返回内容为：");
+    qDebug()<<"-------------";
+    ui->screen->setText(str);
+
     QTimer *timer = new QTimer(this);
-    connect(timer,SIGNAL(timeout()),this,SLOT(portDisplay(str)));
+    connect(timer,SIGNAL(timeout()),this,SLOT(portDisplay()));
+
     timer->setSingleShot(true);
     timer->start(2000);
 
@@ -101,26 +116,54 @@ void portsimulation::mousePressEvent(QMouseEvent *e)
     if(e->button()==Qt::LeftButton && e->x()>moux && e->x()<mouxx && e->y()>mouy && e->y()<mouyy)
     {
         ui->title->setText("loading... ...");
-        QString send = ui->lineEdit->text();
+        QString send_str = ui->lineEdit->text();
         ui->lineEdit->clear();
-//        ui->screen->setText(send);
-//        QString send = ui->lineEdit->text();
-//        ui->screen->setText(send);
+        ///////////////////////////////////////////////////
+        char send[22] = {0};
+//        for(int k=0;k<22;k++){
+//            send[k]=0;
+//        }
+        QByteArray ba = send_str.toLatin1();
+        char *mm = ba.data();
+
+        int i=strlen(mm);
+        int length;
+        if(i>20)
+            length=20;
+        else
+            length=i;
+        for(int j=2;j<length+2;j++)
+        {
+            send[j]=mm[j-2];
+        }
+         send[0]=0x04;
+         send[1]=0x21;
+        send[length+2]=0xFF;
+        ui->title->setText("loading... ...");
+        //写入指令
+        serialport->write(send);
     }
 }
 
 
-void portsimulation::portDisplay(QString s)
+void portsimulation::portDisplay()
 {
 //    ui->screen->setStyleSheet("color:#ffffff;");
 //    ui->screen->setStyleSheet("size:100;");
     ui->label_2->clear();
-    ui->title->setText("返回内容为：");
-    ui->screen->setText(s);
+    qDebug()<<"shoudaolexiaoxi1"<<endl;
+
+    qDebug()<<"shoudaolexiaoxi2"<<endl;
+
+    qDebug()<<"shoudaolexiaoxi3"<<endl;
     QTimer *timer = new QTimer(this);
+    qDebug()<<"shoudaolexiaoxi4"<<endl;
     connect(timer,SIGNAL(timeout()),this,SLOT(portInit()));
+    qDebug()<<"shoudaolexiaoxi5"<<endl;
     timer->setSingleShot(true);
+    qDebug()<<"shoudaolexiaoxi6"<<endl;
     timer->start(2000);
+    qDebug()<<"shoudaolexiaoxi7"<<endl;
 
 }
 
@@ -132,6 +175,11 @@ void portsimulation::portInit()
 
 void portsimulation::on_pushButton_clicked()
 {
+    if(serialport == NULL){
+return;
+    }
     this->close();
-    this->serialport->close();
+    readTimer.stop();
+    serialport->close();
+    serialport = NULL;
 }

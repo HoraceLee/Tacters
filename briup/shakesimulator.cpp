@@ -140,5 +140,7 @@ void ShakeSimulator::timerOut()
 void ShakeSimulator::on_pushButton_clicked()
 {
     this->close();
-    this->serialport->close();
+    readTimer.stop();
+    serialport->close();
+    serialport = NULL;
 }

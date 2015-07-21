@@ -37,6 +37,8 @@ private:
     unsigned char     order;
     bool         isPortOpen;
     QSerialPort* serialport;
+
+
 };
 
 #endif // MOTORDEMONSTRATE_H

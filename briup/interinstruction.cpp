@@ -89,6 +89,8 @@ void interinstruction::readSlot()
 
 void interinstruction::on_clsoeBtn_clicked()
 {
+    readTimer.stop();
     serialport->close();
+    serialport = NULL;
     this->close();
 }

@@ -92,12 +92,13 @@ HumidityWindow::HumidityWindow(QWidget *parent) :
     //校验
     serialport->setParity((QSerialPort::Parity)(0));//23333333
     this->isPortOpen=true;
-    char send[2]={0x10,0xff};
+    char send[2]={0x06,0xff};
     serialport->write(send);
     readTimer.start(200);//每隔200ms
-
+    qDebug()<<"--------------";
 }
   connect(&readTimer,SIGNAL(timeout()),this,SLOT(readSlot()));
+  connect(&readTimer,SIGNAL(timeout()),this,SLOT(repaint()));
 
 
 //    connect(this,SIGNAL(addDataAndShow()),this,SLOT(paintEvent()));
@@ -111,22 +112,27 @@ HumidityWindow::~HumidityWindow()
 {
     delete ui;
 }
-void HumidityWindow::readSolt()
+void HumidityWindow::readSlot()
 {
+
     QByteArray data;
     data=this->serialport->readAll();//接受数据
-    if(!isFrame(data,0x10)){
+    qDebug()<<data.toHex();
+    if(!isFrame(data,0x06,4)){
         return;
     }
+    qDebug()<<data.toHex();
     if(data.isEmpty())
     {
        return;
     }
-    order[1]=(char)data.at(1);//温度
-    order[2]=(char)data.at(2);//适度
+    order[0]=(char)data.at(1);//温度
+    order[1]=(char)data.at(2);//适度
+
+    qDebug()<<data.toHex();
 
     int minutes = FileUtils::calMinute(QDateTime::currentDateTime());
-    HumidityWindow::addDataAndShow(minutes,order[1],order[2]);
+    HumidityWindow::addDataAndShow(minutes,order[0],order[1]);
 
 }
 
@@ -248,4 +254,16 @@ void HumidityWindow::on_humi_ShowInPlot_triggered()
         HumidityWindow::showDataVector(tempData);
     }
     qDebug()<<"HumidityWindow::fileName:::::"<<HumidityWindow::fileName;
+}
+
+void HumidityWindow::on_closeBtn_clicked()
+{
+    if(serialport==NULL){
+        return ;
+    }
+    readTimer.stop();
+    serialport->close();
+    serialport = NULL;
+    this->close();
+
 }

@@ -118,3 +118,5 @@ DISTFILES += \
     circuit_images/0012.jpg \
     circuit_images/0013.jpg \
     circuit_images/0014.jpg
+
+RC_FILE += app_icon.rc

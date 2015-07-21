@@ -7,6 +7,7 @@
 #include <QBitmap>
 #include <QPainter>
 #include "frame.h"
+#include <QDebug>
 
 lightDemonstrate::lightDemonstrate(QWidget *parent) :
     QWidget(parent),
@@ -28,6 +29,7 @@ lightDemonstrate::lightDemonstrate(QWidget *parent) :
 //    connect(timer,SIGNAL(timeout()),this,SLOT(stopMovie()));
 //    timer->setSingleShot(true);
 //    timer->start(1100);
+    lastState = 0;
     //生成一张位图
     QBitmap objBitmap(size());
     //QPainter用于在位图上绘画
@@ -79,30 +81,36 @@ lightDemonstrate::~lightDemonstrate()
 void lightDemonstrate::readSlot(){
     QByteArray data;
     data=this->serialport->readAll();//接受数据
+    qDebug()<<data.toHex();
     if(!isFrame(data,0x08,3)){
         return;
     }
-    if(!data.isEmpty())
+    if(data.isEmpty())
     {
         return;
     }
-    if( order ==1 ){
-        QMovie *daytonight = new QMovie(":/images/day_to_night.gif");
-        QTimer *timer = new QTimer();
-        connect(timer,SIGNAL(timeout()),this,SLOT(stopMovie()));
-        timer->setSingleShot(true);
-        ui->label->setMovie(daytonight);
-        ui->label->movie()->start();
-        timer->start(1000);
-    }else if( order == 2){
-        QMovie *nighttoday = new QMovie(":/images/night_to_day.gif");
-        QTimer *timer = new QTimer();
-        connect(timer,SIGNAL(timeout()),this,SLOT(stopMovie()));
-        timer->setSingleShot(true);
-        ui->label->setMovie(nighttoday);
-        ui->label->movie()->start();
-        timer->start(900);
-   }
+    order  = (char)data.at(1);
+    qDebug()<<(order+0x30);
+    if(order!=lastState){
+        lastState = order;
+        if( lastState ==1 ){
+            QMovie *daytonight = new QMovie(":/images/day_to_night.gif");
+            QTimer *timer = new QTimer();
+            connect(timer,SIGNAL(timeout()),this,SLOT(stopMovie()));
+            timer->setSingleShot(true);
+            ui->label->setMovie(daytonight);
+            ui->label->movie()->start();
+            timer->start(1000);
+        }else if( lastState == 0){
+            QMovie *nighttoday = new QMovie(":/images/night_to_day.gif");
+            QTimer *timer = new QTimer();
+            connect(timer,SIGNAL(timeout()),this,SLOT(stopMovie()));
+            timer->setSingleShot(true);
+            ui->label->setMovie(nighttoday);
+            ui->label->movie()->start();
+            timer->start(900);
+       }
+    }
 }
 
 void lightDemonstrate::stopMovie(){
@@ -113,5 +121,7 @@ void lightDemonstrate::stopMovie(){
 void lightDemonstrate::on_pushButton_clicked()
 {
     this->close();
-    this->serialport->close();
+    readTimer.stop();
+    serialport->close();
+    serialport = NULL;
 }

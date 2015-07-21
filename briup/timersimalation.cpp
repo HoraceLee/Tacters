@@ -109,6 +109,7 @@ void timersimalation::on_pushButton_clicked()
     ui->second->display(sec);
 //    char c = (char)send;
 //    qDebug()<<c;
+
     QByteArray ba = s.toLatin1();
     char *mm = ba.data();
     int len =strlen(mm);
@@ -121,9 +122,10 @@ void timersimalation::on_pushButton_clicked()
 //        qDebug()<<temp;
     }
     sendmessage[0]=0x02;
-    sendmessage[1]=temp;
+//    sendmessage[1]=(temp));
+    sendmessage[1]=(char)send;
 //    QString nn = QString(QLatin1String(temp));
-//    qDebug()<<sendmessage[1];
+    qDebug()<<sendmessage[1];
     sendmessage[2]=0xFF;
     //应该传走sendmessage
     serialport->write(sendmessage);
@@ -139,6 +141,11 @@ void timersimalation::closel(){
 
 void timersimalation::on_closeBtn_clicked()
 {
+    if(serialport==NULL){
+        return ;
+    }
+    readTimer.stop();
     serialport->close();
+    serialport = NULL;
     this->close();
 }

@@ -124,22 +124,6 @@
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>720</x>
-     <y>380</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
@@ -193,7 +177,6 @@
     <bool>true</bool>
    </property>
   </widget>
-  <zorder>lineEdit</zorder>
   <zorder>label_2</zorder>
   <zorder>minute</zorder>
   <zorder>second</zorder>
@@ -201,8 +184,8 @@
   <zorder>label_3</zorder>
   <zorder>label_4</zorder>
   <zorder>pushButton</zorder>
-  <zorder>pushButton_2</zorder>
   <zorder>closeBtn</zorder>
+  <zorder>lineEdit</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

@@ -26,6 +26,7 @@ BuzzerSimulator::BuzzerSimulator(QWidget *parent) :
     layout->addWidget(pianoWidget);
     layout->addWidget(musicWidget);
     ui->mainwidget->setLayout(layout);
+    pianoWidget->open();
 }
 
 BuzzerSimulator::~BuzzerSimulator()
@@ -37,12 +38,15 @@ void BuzzerSimulator::on_pianoBtn_clicked()
 {
     layout->setCurrentIndex(0);
     musicWidget->closeport();//关闭串口
+    pianoWidget->open();
 }
 
 void BuzzerSimulator::on_musicBtn_clicked()
 {
     layout->setCurrentIndex(1);
      pianoWidget->closeport();//关闭串口
+     qDebug()<<"--------------";
+     musicWidget->open();
 }
 
 void BuzzerSimulator::on_closeBtn_clicked()

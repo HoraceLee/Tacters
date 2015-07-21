@@ -12,6 +12,7 @@
 #include <QBitmap>
 #include "frame.h"
 
+
 int flag = 0;
 lcdsimlation::lcdsimlation(QWidget *parent) :
     QWidget(parent),
@@ -79,8 +80,12 @@ lcdsimlation::~lcdsimlation()
 void lcdsimlation::readSlot(){
     QByteArray data;
     data=this->serialport->readAll();//接受数据
+    qDebug()<<data.toHex();
     if(!isFrame(data,0x13)){
         return;
+    }
+    if(data.length()<3){
+        return ;
     }
     if(!data.isEmpty()){
         ui->title->clear();
@@ -509,6 +514,8 @@ void lcdsimlation::on_capslk_clicked()
 
 void lcdsimlation::on_closeBtn_clicked()
 {
+    readTimer.stop();
     serialport->close();
+    serialport = NULL;
     this->close();
 }

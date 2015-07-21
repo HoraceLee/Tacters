@@ -75,19 +75,22 @@ void RFIDsimulation::readSlot(){
        ui->RFIDcard->clear();
        return;
     }
+    if(data.length()<3){
+        return ;
+    }
+    data.remove(0,1);
+    data.remove(data.length()-1,1);
     QPixmap  card ;
     card.load(":/images/RFIDcard.png");
     ui->RFIDcard->setPixmap(card);
-    for(int i=2;i<data.length();i++)
-    {
-    order[i]=(char)data.at(i);
-  }
-    QString str=QString(QLatin1String(order));
-    ui->contents->setText(str);
+
+    ui->contents->setText(data.toHex());
 }
 
 void RFIDsimulation::on_closeBtn_clicked()
 {
     this->close();
-    this->serialport->close();
+    readTimer.stop();
+    serialport->close();
+    serialport = NULL;
 }

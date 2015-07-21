@@ -84,7 +84,7 @@ private:
     QSerialPort* serialport;
     QTimer   readTimer;
     bool    isPortOpen;
-    char*    order;
+    char    order[2];
 
 
 signals:

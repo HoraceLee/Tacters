@@ -139,6 +139,13 @@
     <bool>true</bool>
    </property>
   </widget>
+  <zorder>label</zorder>
+  <zorder>mouse</zorder>
+  <zorder>lineEdit</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>title</zorder>
+  <zorder>screen</zorder>
+  <zorder>label_2</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

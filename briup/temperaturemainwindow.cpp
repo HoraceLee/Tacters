@@ -128,7 +128,8 @@ TemperatureMainWindow::TemperatureMainWindow(QWidget *parent) :
         readTimer.start(200);//每隔200ms
     }
     connect(&readTimer,SIGNAL(timeout()),this,SLOT(readSlot()));
-    TemperatureMainWindow::addTempDataAndShow(1,38);
+    connect(&readTimer,SIGNAL(timeout()),this,SLOT(repaint()));
+//    TemperatureMainWindow::addTempDataAndShow(1,38);
 }
 
 TemperatureMainWindow::~TemperatureMainWindow()
@@ -138,23 +139,24 @@ TemperatureMainWindow::~TemperatureMainWindow()
 void TemperatureMainWindow::readSlot(){
     QByteArray data;
     data=this->serialport->readAll();//接受数据
-    if(isFrame(data,0x07)){
+    if(!isFrame(data,0x07,4)){
        return;
     }
     if(data.isEmpty())
     {
        return;
     }
-    order[1]=(char)data.at(1);//整数
-    order[2]=(char)data.at(2);//小数
+    qDebug()<<data.toHex();
+    order[0]=(char )data.at(1);//整数
+    order[1]=(char)data.at(2);//小数
+    qDebug()<<"--------------------------";
     double afterpoint;
-    if(order[2]>=10){
-      afterpoint=order[2]/100;
-    }else{
-      afterpoint=order[2]/10;
-    }
-    double tempvalue=order[1]+afterpoint;
+    afterpoint = (unsigned char)order[1]/256.0;
+    qDebug()<<afterpoint;
+    double tempvalue=order[0]+afterpoint;
+    qDebug()<<tempvalue;
     int minutes = FileUtils::calMinute(QDateTime::currentDateTime());
+
     TemperatureMainWindow::addTempDataAndShow(minutes,tempvalue);
 }
 
@@ -297,5 +299,7 @@ void TemperatureMainWindow::on_showInPlot_triggered()
 void TemperatureMainWindow::on_pushButton_clicked()
 {
     this->close();
+    this->readTimer.stop();
     this->serialport->close();
+    this->serialport=NULL;
 }
