@@ -89,6 +89,13 @@ void interinstruction::readSlot()
 
 void interinstruction::on_clsoeBtn_clicked()
 {
+    if(serialport == NULL){
+        return;
+    }
+    if(!isPortOpen){
+        serialport = NULL;
+        return;
+    }
     readTimer.stop();
     serialport->close();
     serialport = NULL;

@@ -161,9 +161,6 @@ void Picker::mousePressEvent(QMouseEvent *event)
             m_icons[1]->setMatrix(matrix3);
             m_icons[2]->setMatrix(matrix3);
         }
-
-
-
     }
 }
 

@@ -34,7 +34,7 @@ private:
     Ui::BuzzerSimulator *ui;
     musicwidget *musicWidget;
     pianowidget *pianoWidget;
-     QStackedLayout *layout;
+    QStackedLayout *layout;
 };
 
 #endif // BUZZERSIMULATOR_H

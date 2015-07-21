@@ -47,7 +47,8 @@ SOURCES += main.cpp\
     expcode.cpp \
     expknowledge.cpp \
     expprinciple.cpp \
-    complex.cpp
+    complex.cpp \
+    serialthread.cpp
 
 HEADERS  += mainwindow.h \
     mainwidget.h \
@@ -84,7 +85,8 @@ HEADERS  += mainwindow.h \
     expcode.h \
     expknowledge.h \
     expprinciple.h \
-    complex.h
+    complex.h \
+    serialthread.h
 
 FORMS    += mainwindow.ui \
     mainwidget.ui \

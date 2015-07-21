@@ -36,8 +36,6 @@ public:
     static int project_id;
     static int calMinute(QDateTime dateTime);
 
-
-
 };
 
 

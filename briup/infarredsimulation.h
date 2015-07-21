@@ -20,9 +20,8 @@ public:
     explicit infarredsimulation(QWidget *parent = 0);
     void addPeople();
     void removePeople();
-
-
     ~infarredsimulation();
+
 protected:
     void paintEvent(QPaintEvent *e);
 

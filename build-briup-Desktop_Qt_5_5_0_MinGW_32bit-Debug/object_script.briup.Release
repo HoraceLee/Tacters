@@ -35,6 +35,7 @@ INPUT(
 ./release\expknowledge.o
 ./release\expprinciple.o
 ./release\complex.o
+./release\serialthread.o
 ./release\qrc_images.o
 ./release\moc_mainwindow.o
 ./release\moc_mainwidget.o

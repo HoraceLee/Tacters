@@ -259,12 +259,15 @@ void HumidityWindow::on_humi_ShowInPlot_triggered()
 
 void HumidityWindow::on_closeBtn_clicked()
 {
-    if(serialport==NULL){
-        return ;
+    if(serialport == NULL){
+        return;
+    }
+    if(!isPortOpen){
+        serialport = NULL;
+        return;
     }
     readTimer.stop();
     serialport->close();
     serialport = NULL;
     this->close();
-
 }

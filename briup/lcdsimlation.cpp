@@ -514,6 +514,13 @@ void lcdsimlation::on_capslk_clicked()
 
 void lcdsimlation::on_closeBtn_clicked()
 {
+    if(serialport == NULL){
+        return;
+    }
+    if(!isPortOpen){
+        serialport = NULL;
+        return;
+    }
     readTimer.stop();
     serialport->close();
     serialport = NULL;

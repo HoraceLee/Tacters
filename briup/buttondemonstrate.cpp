@@ -182,6 +182,13 @@ void buttonDemonstrate::readSlot()
 
 void buttonDemonstrate::on_pushButton_clicked()
 {
+    if(serialport == NULL){
+        return;
+    }
+    if(!isPortOpen){
+        serialport = NULL;
+        return;
+    }
     readTimer.stop();
     serialport->close();
     serialport = NULL;

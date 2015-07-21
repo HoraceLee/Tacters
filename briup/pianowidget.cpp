@@ -182,17 +182,15 @@ void pianowidget::on_pianolabel7_LabelRelease()
     ui->musiclabel2->setPixmap(QPixmap());
 }
 void pianowidget::closeport(){
-    if(serialport==NULL){
+    if(serialport == NULL){
         return;
     }
-    if(!serialport->isOpen()){
+    if(!isPortOpen){
         serialport = NULL;
         return;
     }
-    if(serialport->isOpen()){
-        serialport->close();
-        serialport = NULL;
-    }
+    serialport->close();
+    serialport = NULL;
 }
 
 void pianowidget::open(){

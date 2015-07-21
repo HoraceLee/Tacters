@@ -102,7 +102,11 @@ void infarredsimulation::paintEvent(QPaintEvent *e)
 
 void infarredsimulation::on_closeBtn_clicked()
 {
-    if(serialport==NULL){
+    if(serialport == NULL){
+        return;
+    }
+    if(!isPortOpen){
+        serialport = NULL;
         return;
     }
     readTimer.stop();

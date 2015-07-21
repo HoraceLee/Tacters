@@ -92,7 +92,7 @@ void RFIDsimulation::on_closeBtn_clicked()
     if(this->serialport==NULL){
         return ;
     }
-    if(!this->serialport->isOpen()){
+    if(!isPortOpen){
         serialport = NULL;
         return;
     }

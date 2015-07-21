@@ -338,10 +338,16 @@ void ledsimulation::on_pushButton_4_clicked()
 
 void ledsimulation::on_closeBtn_clicked()
 {
+    if(serialport == NULL){
+        return;
+    }
+    if(!isPortOpen){
+        serialport = NULL;
+        return;
+    }
     readTimer.stop();
     serialport->close();
     serialport = NULL;
-
     this->close();
 }
 

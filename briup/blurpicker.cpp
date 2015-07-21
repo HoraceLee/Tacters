@@ -12,8 +12,6 @@
 #define M_PI 3.14159265358979323846
 #endif
 
-
-
 BlurPicker::BlurPicker(QWidget *parent): QGraphicsView(parent), m_index(0.0), m_animation(this, "index")
 {
 //    setBackgroundBrush(QPixmap(":/images/backGround2.jpg"));
@@ -81,8 +79,7 @@ void BlurPicker::setupScene()
     names << ":/images/infarredLabel.png";//id=11 红外线
     names << ":/images/enterLabel.png";//id=12  按键
     names << ":/images/audioLabel.png";//id=13 蜂鸣器
-    names << ":/images/timericon.png";//id=14  综合
-   // names << ":/images/timericon.png";//id=15
+    names << ":/images/compLabel.png";//id=14  综合
 
     for (int i = 0; i < names.count(); i++) {
         QPixmap pixmap(names[i]);

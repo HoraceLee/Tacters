@@ -16,24 +16,49 @@
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>450</x>
-     <y>540</y>
-     <width>41</width>
+     <x>680</x>
+     <y>320</y>
+     <width>91</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Aharoni</family>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>435</x>
-     <y>570</y>
-     <width>75</width>
-     <height>23</height>
+     <x>680</x>
+     <y>370</y>
+     <width>91</width>
+     <height>31</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <property name="text">
-    <string>SET</string>
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset resource="images.qrc">
+     <normaloff>:/images/press_btn.png</normaloff>
+     <normalon>:/images/press_btn.png</normalon>:/images/press_btn.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>80</width>
+     <height>50</height>
+    </size>
    </property>
    <property name="flat">
     <bool>true</bool>

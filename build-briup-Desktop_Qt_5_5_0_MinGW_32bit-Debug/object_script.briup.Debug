@@ -35,6 +35,7 @@ INPUT(
 ./debug\expknowledge.o
 ./debug\expprinciple.o
 ./debug\complex.o
+./debug\serialthread.o
 ./debug\qrc_images.o
 ./debug\moc_mainwindow.o
 ./debug\moc_mainwidget.o

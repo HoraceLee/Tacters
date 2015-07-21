@@ -141,8 +141,12 @@ void timersimalation::closel(){
 
 void timersimalation::on_closeBtn_clicked()
 {
-    if(serialport==NULL){
-        return ;
+    if(serialport == NULL){
+        return;
+    }
+    if(!isPortOpen){
+        serialport = NULL;
+        return;
     }
     readTimer.stop();
     serialport->close();

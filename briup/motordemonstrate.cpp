@@ -209,7 +209,7 @@ void MotorDemonstrate::on_pushButton_clicked()
     if(this->serialport==NULL){
         return ;
     }
-    if(!this->serialport->isOpen()){
+    if(!isPortOpen){
         serialport = NULL;
         return;
     }

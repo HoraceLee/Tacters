@@ -297,8 +297,15 @@ void TemperatureMainWindow::on_showInPlot_triggered()
 
 void TemperatureMainWindow::on_pushButton_clicked()
 {
+    if(serialport == NULL){
+        return;
+    }
+    if(!isPortOpen){
+        serialport = NULL;
+        return;
+    }
+    readTimer.stop();
+    serialport->close();
+    serialport = NULL;
     this->close();
-    this->readTimer.stop();
-    this->serialport->close();
-    this->serialport=NULL;
 }

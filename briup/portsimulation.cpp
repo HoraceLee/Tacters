@@ -176,12 +176,16 @@ void portsimulation::portInit()
 void portsimulation::on_pushButton_clicked()
 {
     if(serialport == NULL){
-return;
+        return;
     }
-    this->close();
+    if(!isPortOpen){
+        serialport = NULL;
+        return;
+    }
     readTimer.stop();
     serialport->close();
     serialport = NULL;
+    this->close();
 }
 void portsimulation::paintEvent(QPaintEvent *e)
 {

@@ -2,7 +2,6 @@
     <qresource prefix="/">
         <file>images/LEDoff.png</file>
         <file>images/LEDon.png</file>
-        <file>images/timericon.png</file>
         <file>images/audioLabel.png</file>
         <file>images/enterLabel.png</file>
         <file>images/LCDLabel.png</file>
@@ -48,7 +47,6 @@
         <file>images/close3.png</file>
         <file>images/Fcode.png</file>
         <file>images/Fcricuit.png</file>
-        <file>images/FNotes.png</file>
         <file>images/Fprinciple.png</file>
         <file>images/Fsimulation.png</file>
         <file>images/day_to_night.gif</file>
@@ -102,5 +100,8 @@
         <file>images/back_book.jpg</file>
         <file>images/back_all.jpg</file>
         <file>images/musicbackground2.jpg</file>
+        <file>images/press_btn.png</file>
+        <file>images/FNotes.png</file>
+        <file>images/compLabel.png</file>
     </qresource>
 </RCC>
