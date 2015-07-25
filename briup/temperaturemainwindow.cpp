@@ -147,7 +147,7 @@ void TemperatureMainWindow::readSlot(){
        return;
     }
     qDebug()<<data.toHex();
-    order[0]=(char )data.at(1);//整数
+    order[0]=(char)data.at(1);//整数
     order[1]=(char)data.at(2);//小数
     qDebug()<<"--------------------------";
     double afterpoint;
@@ -158,6 +158,8 @@ void TemperatureMainWindow::readSlot(){
     int minutes = FileUtils::calMinute(QDateTime::currentDateTime());
     TemperatureMainWindow::addTempDataAndShow(minutes,tempvalue);
     // 新加，目的是为了plot动态刷新
+    ui->plot->update();
+
     ui->plot->repaint();
 }
 
@@ -225,7 +227,10 @@ void TemperatureMainWindow::setupPlot()
 {
     // The following plot setup is mostly taken from the plot demos:
     ui->plot->addGraph();
-    ui->plot->graph()->setPen(QPen(Qt::red));
+    QPen pen;
+    pen.setWidth(32);
+    pen.setColor(Qt::red);
+    ui->plot->graph()->setPen(pen);
     ui->plot->axisRect()->setupFullAxesBox(true);
     ui->plot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
 }

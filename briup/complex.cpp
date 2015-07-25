@@ -46,30 +46,24 @@ Complex::Complex(QWidget *parent) :
     {
     //设置设备号
         foreach (const QSerialPortInfo &info, QSerialPortInfo::availablePorts())
-           {
-
+        {
             serialport->setPortName(info.portName());
         }
-
-    serialport->open(QIODevice::ReadWrite);
-
-
-    serialport->setBaudRate(9600);
-    //设置数据位
-    serialport->setDataBits((QSerialPort::DataBits)(8));
-    //设置停止位
-    serialport->setStopBits((QSerialPort::StopBits)(1));
-    //校验
-    serialport->setParity((QSerialPort::Parity)(0));//23333333
-    this->isPortOpen=true;
-
-    readTimer.start(200);//每隔200ms
-}
-  connect(&readTimer,SIGNAL(timeout()),this,SLOT(readSlot()));
-
-  //*********************************************************************************
-  connect(ui->pushButton_2,SIGNAL(on_pushButton_2_clicked()),this,SLOT(readSlot()));
-  //*********************************************************************************
+        serialport->open(QIODevice::ReadWrite);
+        serialport->setBaudRate(9600);
+        //设置数据位
+        serialport->setDataBits((QSerialPort::DataBits)(8));
+        //设置停止位
+        serialport->setStopBits((QSerialPort::StopBits)(1));
+        //校验
+        serialport->setParity((QSerialPort::Parity)(0));//23333333
+        this->isPortOpen=true;
+        readTimer.start(200);//每隔200ms
+    }
+    connect(&readTimer,SIGNAL(timeout()),this,SLOT(readSlot()));
+    //*********************************************************************************
+    connect(ui->pushButton_2,SIGNAL(on_pushButton_2_clicked()),this,SLOT(readSlot()));
+    //*********************************************************************************
 }
 
 Complex::~Complex()
@@ -93,7 +87,7 @@ void Complex::readSlot(){
     connect(timer_2,SIGNAL(timeout()),this,SLOT(stopMovie()));
     timer_2->setSingleShot(true);
     data=this->serialport->readAll();//接受数
-    if(data.isEmpty()||data.length()==0){
+    if( data.isEmpty() || data.length()==0 ){
         return ;
     }
     qDebug()<<data.toHex();
